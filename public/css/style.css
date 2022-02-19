@@ -1,0 +1,145 @@
+.bg-cs-white {
+    background: #F9F9F9 !important;
+}
+
+.bg-cs-yellow {
+    background-color: #FFA700;
+}
+
+.bg-cs-blue {
+    background-color: #3D3A4B;
+}
+
+.text-cs-yellow {
+    color: #FFA700;
+}
+
+.text-cs-blue {
+    color: #3D3A4B;
+}
+
+.text-cs-black {
+    color: #000000;
+}
+
+.text-bold {
+    font-weight: 600;
+}
+
+.title {
+    font-weight: 400;
+    color: #3D3A4B;
+}
+
+.line {
+    height: 1px;
+    width: 78px;
+    background-color: #3D3A4B;
+}
+
+.line-white {
+    height: 1px;
+    width: 78px;
+    background-color: #ffffff;
+}
+
+.radius-10 {
+    border-radius: 10px;
+}
+
+.pricetag {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    border-bottom-right-radius: 10px;
+}
+
+.relative {
+    position: relative;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.productimg:hover img {
+    background-blend-mode: multiply;
+}
+
+.li-narrow {
+    margin-bottom: -10px !important;
+}
+
+.mb-mobile-3 {
+    margin-bottom: 1em;
+}
+
+.text-center-mobile-right-desktop {
+    text-align: center;
+}
+
+.welcomeimg-mobile {
+    width: 100%;
+    height: auto;
+}
+
+.bg-contact {
+    background-image: unset;
+    background-position: unset;
+    background-size: unset;
+    background-repeat: unset;
+    background-color: #3D3A4B;
+    padding-top: 2em;
+}
+
+.text-32 {
+  font-size: 32px;
+}
+
+@media (min-width: 768px) {
+    .bg-contact {
+        background-image: url('/assets/images/bg-contact.svg');
+        background-position: center;
+        background-size: cover;
+        background-color: unset;
+        padding-top: unset;
+    }
+
+    .contactfloatimg {
+        position: absolute;
+        bottom: 20%;
+    }
+
+    .bg-welcome {
+        background-image: url('/assets/images/bg-welcome.svg');
+        background-position: center;
+        background-size: cover;
+    }
+
+    .bg-hero {
+        background-image: url('/assets/images/bg-hero.svg');
+        background-position: top;
+        background-size: cover;
+    }
+
+    .herrofloatimg {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translateY(48px);
+    }
+
+    .mb-mobile-3 {
+        margin-bottom: unset;
+    }
+
+    .text-center-mobile-right-desktop {
+        text-align: right;
+    }
+
+    .welcomeimg-mobile {
+      height: 245px;
+      width: auto;
+    }
+
+}
