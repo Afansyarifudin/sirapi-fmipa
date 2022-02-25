@@ -22,7 +22,7 @@ PROYEK TUGAS REKAYASA PERANGKAT LUNAK
  0. wajib punya Git dan akun Github 
  1. masukkan ```git clone https://github.com/Afansyarifudin/legalisir-app.git```
  2. Run ```composer update``` pada cmd di folder project. kalo error coba ```composer install --ignore-platform-reqs``` or ```composer update --ignore-platform-reqs```
- 3. Copy file .env "cp .env.examples .env" 
+ 3. Copy file .env "copy paste .env.examples ke file .env" 
  4. Atur file .env (Nama APP_NAME=e-arsip, DB_DATABASE=e-arsip)
  5. Run ```php artisan key:generate```
  6. Buat Database sesuai variable .env yang dibuat tadi
