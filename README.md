@@ -23,7 +23,7 @@ PROYEK TUGAS REKAYASA PERANGKAT LUNAK
  1. masukkan ```git clone https://github.com/Afansyarifudin/legalisir-app.git```
  2. Run ```composer update``` pada cmd di folder project. kalo error coba ```composer install --ignore-platform-reqs``` or ```composer update --ignore-platform-reqs```
  3. Copy file .env "cp .env.examples .env" 
- 4. Atur file .env (Nama APP_NAME=legalisir-app, DB_DATABASE=legalisir)
+ 4. Atur file .env (Nama APP_NAME=e-arsip, DB_DATABASE=e-arsip)
  5. Run ```php artisan key:generate```
  6. Buat Database sesuai variable .env yang dibuat tadi
  7. Setelah Kalian mengatur .env yang ada jangan lupa untuk menjalankan command berikut
