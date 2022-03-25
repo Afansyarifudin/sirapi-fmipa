@@ -8,6 +8,9 @@
 
     <link rel="shortcut icon" href="{{ url('assets/images/logo/favicon.png') }}">
     <link href="{{ url('assets/css/app.min.css') }}" rel="stylesheet">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/4d597347ad.js" crossorigin="anonymous"></script>
 
     @livewireStyles
 
@@ -65,5 +68,6 @@
     @stack('js')
 
 </body>
-
+<!-- Fontawesome JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 </html>

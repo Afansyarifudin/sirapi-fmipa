@@ -14,6 +14,8 @@
     <link href="{{ url('homebite/assets/owl.carousel/owl.theme.default.css') }}" rel="stylesheet">
     <link href="{{ url('css/style.css') }}" rel="stylesheet">
     <link href="{{ url('homebite/css/style.css') }}" rel="stylesheet">
+    <!-- Fontawesome CSS -->
+    <link href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css') }}" rel="stylesheet">
 
     @livewireStyles
 
@@ -138,5 +140,7 @@
 
     @stack('js')
 </body>
+<!-- Fontawesome JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 
 </html>
