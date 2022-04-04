@@ -1,12 +1,13 @@
+
 <div class="side-nav">
     <div class="side-nav-inner">
         <ul class="side-nav-menu scrollable">
             <li class="nav-item dropdown">
-                <a href="home.blade.php">
+                <a href="">
                     <span class="icon-holder">
                         <i class="anticon anticon-dashboard"></i>
                     </span>
-                    <span class="title" >Dashboard</span>
+                    <span class="title">Dahsboard</span>
                 </a>
             </li>
             <li class="nav-item dropdown">
