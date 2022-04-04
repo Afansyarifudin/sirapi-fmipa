@@ -72,7 +72,7 @@
                     <span class="icon-holder">
                         <i class="anticon anticon-appstore"></i>
                     </span>
-                    <span class="title" >INDEKS</span>
+                    <span class="title" >Indeks</span>
                 </a>
             </li>
             <li class="nav-item dropdown">
@@ -80,7 +80,7 @@
                     <span class="icon-holder">
                         <i class="anticon anticon-setting"></i>
                     </span>
-                    <span class="title" >PENGATURAN</span>
+                    <span class="title" >Pengaturan</span>
                 </a>
             </li>
         </ul>
