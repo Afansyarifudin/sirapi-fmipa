@@ -1,12 +1,10 @@
 <div class="header">
     <div class="logo logo-dark d-flex align-items-center justify-content-center">
-        <a href="{{ url('/') }}">
-            <img height="20" alt="" src="{{ url('logo/wearit.svg') }}">
-            <span class="logo-fold" style="font-weight: 300; color: #111111; font-size: 22px">W</span>
-        </a>
+        <img alt="" src="{{ url('assets/images/e-arsip2.png ') }}" height="50px">
     </div>
     <div class="nav-wrap">
         <ul class="nav-left">
+
             <li class="desktop-toggle">
                 <a href="javascript:void(0);">
                     <i class="anticon"></i>
