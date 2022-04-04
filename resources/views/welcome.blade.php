@@ -15,12 +15,12 @@
 </head>
 
 <body>
-    <!--Navbar--> 
+    <!--Navbar-->
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top scrolling-navbar">
         <div class="container">
             <!-- Navbar brand -->
             <a class="navbar-brand" href="#">
-                <img alt="logoarsip" src="{{ url('assets/images/logoarsip.png') }}" height="50"/>            
+                <img alt="logoarsip" src="{{ url('assets/images/logoarsip.png') }}" height="50"/>
             </a>
 
             <!-- Collapse button -->
@@ -41,13 +41,13 @@
                         <!-- Links -->
                         <ul class="navbar-nav mr-auto smooth-scroll" style="font-size: 20px">
                             <li class="nav-item active px-3">
-                                <a class="nav-link" href="#"><b>Beranda</b></a>
+                                <a class="nav-link" href="#">Beranda</a>
                             </li>
                             <li class="nav-item active px-3">
-                                <a class="nav-link" href="#"><b>Arsip</b></a>
+                                <a class="nav-link" href="#">Arsip</a>
                             </li>
                             <li class="nav-item active px-3">
-                                <a class="nav-link" href="#"><b>Login</b></a>
+                                <a class="nav-link" href="#">Login</a>
                             </li>
 
                             <!-- Dropdown -->
@@ -84,7 +84,7 @@
         </div>
     </div>
     </section>
-   
+
     <script src="{{ url('assets/js/vendors.min.js') }}"></script>
     <script src="{{ url('assets/js/app.min.js') }}"></script>
 
@@ -100,10 +100,10 @@
     animation: zoom 1s;
     }
     @keyframes zoom {from {transform: scale(0.5);}to {transform: scale(1);}}
-    
-      
+
+
 .top-wrapper h1, h4 {
-    
+
     animation: bawahkeatas 1s ;
     }
     @keyframes bawahkeatas {from { transform:translate(0px, 1000px);} to {transform:translate(0px, 0px);}}
