@@ -3,7 +3,7 @@
     <div class="side-nav-inner">
         <ul class="side-nav-menu scrollable">
             <li class="nav-item dropdown">
-                <a href="">
+                <a href="#">
                     <span class="icon-holder">
                         <i class="anticon anticon-dashboard"></i>
                     </span>
@@ -15,7 +15,7 @@
                     <span class="icon-holder">
                         <i class="anticon anticon-file-done"></i>
                     </span>
-                    <span class="title">PUBLIKASI</span>
+                    <span class="title">Publikasi</span>
                     <span class="arrow">
                         <i class="arrow-icon"></i>
                     </span>
@@ -34,7 +34,7 @@
                     <span class="icon-holder">
                         <i class="anticon anticon-mail"></i>
                     </span>
-                    <span class="title">SURAT</span>
+                    <span class="title">Surat</span>
                     <span class="arrow">
                         <i class="arrow-icon"></i>
                     </span>
@@ -53,17 +53,17 @@
                     <span class="icon-holder">
                         <i class="anticon anticon-file-text"></i>
                     </span>
-                    <span class="title">LAPORAN</span>
+                    <span class="title">Laporan</span>
                     <span class="arrow">
                         <i class="arrow-icon"></i>
                     </span>
                 </a>
                 <ul class="dropdown-menu">
                     <li>
-                        <a href="">Laporan Surat Masuk</a>
+                        <a href="#">Laporan Surat Masuk</a>
                     </li>
                     <li>
-                        <a href="">Laporan Surat Keluar</a>
+                        <a href="#">Laporan Surat Keluar</a>
                     </li>
                 </ul>
             </li>
@@ -76,7 +76,7 @@
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a href="">
+                <a href="#">
                     <span class="icon-holder">
                         <i class="anticon anticon-setting"></i>
                     </span>
