@@ -70,7 +70,7 @@
 
     <!--Isi-->
     <section id="Home" class="Home">
-    <div class="top-wrapper text-center" style="background-image: url(assets/images/bgarsip.jpeg); background-size: cover; background-opacity : 0.2; padding: 220px 0 180px 0; oacity: 0.2">
+    <div class="top-wrapper text-center" style="background-image: url(assets/images/bgarsip.jpeg); background-size: cover; background-opacity : 0.2; padding: 250px 0 180px 0; oacity: 0.2">
         <div class="container">
             <h1 class="display-4 font-weight-bold wow fadeInUp" data-wow-delay=".2s" style="color: rgb(65, 105, 225); ">Selamat Datang di E-Arsip FMIPA</h1>
             <h1 class="display-4 wow fadeInUp" data-wow-delay=".2s" style="color: rgb(65, 105, 225); "><b>Universitas Negeri Semarang</b></h1>
