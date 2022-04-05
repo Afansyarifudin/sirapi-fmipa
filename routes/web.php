@@ -21,4 +21,7 @@ Route::get('/dahsboard', function () {
     return view('home.index');
 });
 
+Route::get('/dahsboard', function () {
+    return view('home.index');
+});
 
