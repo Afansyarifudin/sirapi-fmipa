@@ -17,9 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dahsboard', function () {
-    return view('home.index');
-});
+Route::get('/login', function () {
+    return view('auth.login');
 
 Route::get('/dahsboard', function () {
     return view('home.index');
