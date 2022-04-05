@@ -19,3 +19,7 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return view('auth.login');
 });
+
+Route::get('/dahsboard', function () {
+    return view('home.index');
+});
