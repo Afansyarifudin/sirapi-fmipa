@@ -15,12 +15,12 @@
 </head>
 
 <body>
-    <!--Navbar--> 
+    <!--Navbar-->
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top scrolling-navbar">
         <div class="container">
             <!-- Navbar brand -->
             <a class="navbar-brand" href="#">
-                <img alt="logoarsip" src="{{ url('assets/images/logoarsip.png') }}" height="50"/>            
+                <img alt="logoarsip" src="{{ url('assets/images/logoarsip.png') }}" height="50"/>
             </a>
 
             <!-- Collapse button -->
@@ -39,12 +39,12 @@
                     <!-- Collapsible content -->
                     <div class="collapse navbar-collapse" id="basicExampleNav">
                         <!-- Links -->
-                        <ul class="navbar-nav mr-auto smooth-scroll">
+                        <ul class="navbar-nav mr-auto smooth-scroll" style="font-size: 20px">
                             <li class="nav-item active px-3">
-                                <a class="nav-link" href="#About">Beranda</a>
+                                <a class="nav-link" href="#">Beranda</a>
                             </li>
                             <li class="nav-item active px-3">
-                                <a class="nav-link" href="#">Layanan</a>
+                                <a class="nav-link" href="#">Arsip</a>
                             </li>
                             <li class="nav-item active px-3">
                                 <a class="nav-link" href="#">Login</a>
@@ -70,7 +70,7 @@
 
     <!--Isi-->
     <section id="Home" class="Home">
-    <div class="top-wrapper text-center" style="background-image: url(assets/images/bgarsip.jpeg); background-size: cover; background-opacity : 0.2; padding: 210px 0 100px 0; oacity: 0.2">
+    <div class="top-wrapper text-center" style="background-image: url(assets/images/bgarsip.jpeg); background-size: cover; background-opacity : 0.2; padding: 250px 0 180px 0; oacity: 0.2">
         <div class="container">
             <h1 class="display-4 font-weight-bold wow fadeInUp" data-wow-delay=".2s" style="color: rgb(65, 105, 225); ">Selamat Datang di E-Arsip FMIPA</h1>
             <h1 class="display-4 wow fadeInUp" data-wow-delay=".2s" style="color: rgb(65, 105, 225); "><b>Universitas Negeri Semarang</b></h1>
@@ -84,7 +84,7 @@
         </div>
     </div>
     </section>
-   
+
     <script src="{{ url('assets/js/vendors.min.js') }}"></script>
     <script src="{{ url('assets/js/app.min.js') }}"></script>
 
@@ -100,10 +100,10 @@
     animation: zoom 1s;
     }
     @keyframes zoom {from {transform: scale(0.5);}to {transform: scale(1);}}
-    
-      
+
+
 .top-wrapper h1, h4 {
-    
+
     animation: bawahkeatas 1s ;
     }
     @keyframes bawahkeatas {from { transform:translate(0px, 1000px);} to {transform:translate(0px, 0px);}}
