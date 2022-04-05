@@ -49,30 +49,19 @@
                 </ul>
             </li>
             <li class="nav-item dropdown">
-                <a class="dropdown-toggle" href="javascript:void(0);">
+                <a href="#">
                     <span class="icon-holder">
-                        <i class="anticon anticon-file-text"></i>
+                        <i class="anticon anticon-appstore"></i>
                     </span>
-                    <span class="title">Laporan</span>
-                    <span class="arrow">
-                        <i class="arrow-icon"></i>
-                    </span>
+                    <span class="title" >Index</span>
                 </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="#">Laporan Surat Masuk</a>
-                    </li>
-                    <li>
-                        <a href="#">Laporan Surat Keluar</a>
-                    </li>
-                </ul>
             </li>
             <li class="nav-item dropdown">
                 <a href="">
                     <span class="icon-holder">
-                        <i class="anticon anticon-appstore"></i>
+                        <i class="anticon anticon-solution"></i>
                     </span>
-                    <span class="title" >Indeks</span>
+                    <span class="title" >Data User</span>
                 </a>
             </li>
             <li class="nav-item dropdown">
