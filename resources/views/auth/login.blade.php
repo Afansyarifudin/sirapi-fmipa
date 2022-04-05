@@ -26,7 +26,7 @@
                             <div class="card shadow-lg">
                                 <div class="card-body">
                                     <div class="d-flex align-items-center justify-content-between m-b-30">
-                                        <img class="img-fluid" alt="" src="{{ url('assets/images/e-arsip2.png ') }}">
+                                        <img class="img-text-center"  alt="" src="{{ url('assets/images/e-arsip2.png ') }}" style="height:70px">
                                     </div>
                                     <form>
                                         <div class="form-group">
