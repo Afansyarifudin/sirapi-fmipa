@@ -25,9 +25,10 @@
                         <div class="col-md-7 col-lg-5 m-h-auto">
                             <div class="card shadow-lg">
                                 <div class="card-body">
-                                    <div class="d-flex align-items-center justify-content-between m-b-30">
-                                        <img class="img-text-center"  alt="" src="{{ url('assets/images/e-arsip2.png ') }}" style="height:70px">
-                                    </div>
+                                    <img class="rounded mx-auto d-block"  alt="" src="{{ url('assets/images/e-arsip2.png ') }}" style="width: 200px">
+                                    {{-- <div class="d-flex align-items-center justify-content-between m-b-30">
+                                        <img class="img-fluid"  alt="" src="{{ url('assets/images/e-arsip2.png ') }}" style="height:90px">
+                                    </div> --}}
                                     <form>
                                         <div class="form-group">
                                             <label class="font-weight-semibold" for="email">Email :</label>
@@ -44,14 +45,15 @@
                                                 <input type="password" class="form-control" id="password" placeholder="Password">
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <div class="d-flex align-items-center justify-content-between">
-                                                {{-- <span class="font-size-13 text-muted">
+                                        <div class="col align-self-end">
+                                            <button class="btn btn-primary form-control mt-2 bg-primary text-white">Log In</button>
+                                            {{-- <div class="d-flex align-items-center justify-content-between text-end">
+                                                <span class="font-size-13 text-muted">
                                                     Don't have an account?
                                                     <a class="small" href=""> Signup</a>
-                                                </span> --}}
-                                                <button class="btn btn-primary m-r-5">Log In</button>
-                                            </div>
+                                                </span>
+                                                <button class="btn btn-primary text-end">Log In</button>
+                                            </div> --}}
                                         </div>
                                     </form>
                                 </div>
