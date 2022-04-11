@@ -148,65 +148,7 @@
                                     </table>
                                 </div>
                             </div>
-                        {{--  <div class="card shadow">
-                            <div class="card-header py-3">
-                                <p class="text-primary m-0 font-weight-bold">DATA ARSIP</p>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-3"></div>
-                                    <div class="col-md-6"></div>
-                                    <div class="col-md-3">
-                                        <select class="combobox">
-                                            <option value="Select">Penelitian Dosen</option>
-                                            <option value="php">SK Kenaikan Pangkat</option>
-                                            <option value="html">Surat-Surat</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <!-- Tabel -->
-                                <table class="table" id="datatable">
-                                    <thead>
-                                        <th>No</th>
-                                        <th>Judul</th>
-                                        <th>No Surat Lengkap</th>
-                                        <th>Rak Arsip</th>
-                                        <th>Unit Arsip</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Lorem ipsum dolor sit amet</td>
-                                            <td>Lorem ipsum dolor sit amet</td>
-                                            <td>Lorem ipsum dolor sit amet</td>
-                                            <td>Lorem ipsum dolor sit amet</td>
-                                        </tr>
-                                </tbody>
-                                </table>
-                                <div class="table-responsive mt-2" id="datatable">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr class="text-center">
-                                                <th>No</th>
-                                                <th>Judul</th>
-                                                <th>No Surat</th>
-                                                <th>Rak Arsip</th>
-                                                <th>Unit Arsip</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Lorem ipsum dolor sit amet</td>
-                                                    <td>Lorem ipsum dolor sit amet</td>
-                                                    <td>Lorem ipsum dolor sit amet</td>
-                                                    <td>Lorem ipsum dolor sit amet</td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>  --}}
+                        </div>
                     </div>
                 </div>
             </div>
