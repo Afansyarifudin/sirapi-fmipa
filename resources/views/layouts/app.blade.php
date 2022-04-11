@@ -154,7 +154,7 @@
             </div>
         </div>
     </header>
-    <!-- End Navbar -->
+    <!-- End Content -->
 
     <script src="{{ url('assets/js/vendors.min.js') }}"></script>
     <script src="{{ url('assets/js/app.min.js') }}"></script>
