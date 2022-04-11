@@ -26,7 +26,11 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/user', function () {
-    return view('layouts.index');
+    return view('user.index');
+});
+
+Route::get('/createuser', function () {
+    return view('user.create');
 });
 
 
