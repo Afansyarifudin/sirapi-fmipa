@@ -24,5 +24,3 @@ Route::get('/login', function () {
 Route::get('/dashboard', function () {
     return view('home.index');
 });
-
-
