@@ -46,6 +46,10 @@
                             <th scope="row">Keterangan</th>
                             <td></td>
                         </tr>
+                        <tr>
+                            <th scope="row">File Surat</th>
+                            <td></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

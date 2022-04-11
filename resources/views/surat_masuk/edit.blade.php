@@ -52,6 +52,21 @@
                             <input type="date" class="form-control" placeholder="Tanggal Diterima">
                         </div>
                     </div>
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <label for="Keterangan">Keterangan</label>
+                            <input type="text" class="form-control" id="Keterangan" placeholder="Keterangan">
+                        </div>
+                        <div class="col">
+                            <label for="Keterangan">Pilih File</label>
+                            <div class="form-row">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="customFile">
+                                    <label class="custom-file-label" for="customFile">Pilih file</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <a href="#" class="btn btn-primary float-right">Simpan</a>
                 </form>
             </div>

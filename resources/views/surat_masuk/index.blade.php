@@ -37,7 +37,20 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
+                        <td class="text-center d-inline-flex">
+                            {{--  <a href="#" class="badge badge-pill badge-warning mx-1"><i class="anticon anticon-edit"></i> Edit</a>
+                            <a href="#" class="badge badge-pill badge-danger mx-1"><i class="anticon anticon-delete"></i> Delete</a>
+                            <a href="#" class="badge badge-pill badge-info mx-1"><i class="anticon anticon-select"></i> Show</a>  --}}
+                            <a href="#" class="badge badge-pill badge-warning mx-1" data-container="body" data-toggle="popover" data-placement="top" data-content="Edit">
+                                <i class="anticon anticon-edit"></i>
+                            </a>
+                            <a href="#" class="badge badge-pill badge-danger mx-1" data-container="body" data-toggle="popover" data-placement="top" data-content="Delete">
+                                <i class="anticon anticon-delete"></i>
+                            </a>
+                            <a href="#" class="badge badge-pill badge-info mx-1" data-container="body" data-toggle="popover" data-placement="top" data-content="Show">
+                                <i class="anticon anticon-select"></i>
+                            </a>
+                        </td>
                     </tbody>
                 </table>
             </div>
