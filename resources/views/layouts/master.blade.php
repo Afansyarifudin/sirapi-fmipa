@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>E-Arsip | FMIPA UNNES</title>
 
-    <link rel="shortcut icon" href="{{ url('assets/images/logo/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ url('assets/images/iconarsip.png') }}">
     <link href="{{ url('assets/css/app.min.css') }}" rel="stylesheet">
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">

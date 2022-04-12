@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>E-Arsip FMIPA UNNES</title>
+    <title>E-ARSIP | FMIPA UNNES</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-    <link rel="shortcut icon" href="{{ url('assets/images/logo/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ url('assets/images/iconarsip.png') }}">
     <link href="{{ url('assets/css/app.min.css') }}" rel="stylesheet">
 
     @stack('css')
