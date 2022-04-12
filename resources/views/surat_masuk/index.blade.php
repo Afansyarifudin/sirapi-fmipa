@@ -38,9 +38,9 @@
                         <td></td>
                         <td></td>
                         <td class="text-center d-inline-flex">
-                            <a href="#" class="badge badge-pill badge-warning mx-1"><i class="anticon anticon-edit"></i> Edit</a>
-                            <a href="#" class="badge badge-pill badge-danger mx-1"><i class="anticon anticon-delete"></i> Delete</a>
-                            <a href="#" class="badge badge-pill badge-info mx-1"><i class="anticon anticon-select"></i> Show</a>
+                            <a href="#" class="badge badge-success mx-1"data-toggle="tooltip" title= "Show"><i class='anticon anticon-select'></i></a>
+                            <a href="#" class="badge badge-primary mx-1" data-toggle="tooltip" title= "Edit"><i class='fas fa-user-edit'></i></a>
+                            <a href="#" class="badge badge-danger mx-1"data-toggle="tooltip" title= "Delete"><i class='far fa-trash-alt'></i></a>
                         </td>
                     </tbody>
                 </table>
