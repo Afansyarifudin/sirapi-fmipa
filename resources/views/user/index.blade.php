@@ -29,8 +29,12 @@
                         <th>Nama Lengkap</th>
                         <th>Email</th>
                         <th>Password</th>
-                        <th style="width: 10px; text-align: center"><i class='anticon anticon-setting'></i></th>
+                        <th colspan="3" style="width: 10px; text-align: center"><i class='anticon anticon-setting'></i></th>
                     </thead>
+                    <tr>
+                        <td><button type='button' class='btn btn-primary'><i class='fas fa-user-edit'></i></button></td>
+                        <td><button type='button' class='btn btn-danger'><i class='far fa-trash-alt'></i></button></td>
+                    </tr>
                 </table>
             </div>
         </div>
