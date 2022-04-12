@@ -24,5 +24,8 @@ Route::get('/login', function () {
 Route::get('/dashboard', function () {
     return view('home.index');
 });
+Route::get('/penelitian', function () {
+    return view('penelitian.index');
+});
 
 
