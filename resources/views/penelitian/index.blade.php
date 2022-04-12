@@ -9,11 +9,11 @@
             <div class="card-body">
                 <div class="row align-items-center">
                     <div class="col-md-8">
-                        <h4><b>Data User</b></h4>
-                        <p>Di bawah ini merupakan list daftar user yang terdia dalam sistem</p>
+                        <h4><b>Penelitian</b></h4>
+                        <p>Di bawah ini merupakan list daftar penelitan yang terdia dalam sistem</p>
                     </div>
                     <div class="col-md-4">
-                        <a href="#" class="btn btn-primary float-right">Tambah User</a>
+                        <a href="#" class="btn btn-primary float-right">Tambah Penelitian</a>
                     </div>
                 </div>
             </div>
@@ -25,12 +25,14 @@
                 <table class="table" id="datatable">
                     <thead>
                         <th>No</th>
-                        <th>Username</th>
-                        <th>Nama Lengkap</th>
-                        <th>Email</th>
+                        <th>Nama Ketua</th>
+                        <th>Judul Penelitian</th>
+                        <th>Tahun Penelitian</th>
+                        <th>File</th>
                         <th style="width: 10px; text-align: center"><i class='anticon anticon-setting'></i></th>
                     </thead>
                     <tbody>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
