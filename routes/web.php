@@ -25,15 +25,5 @@ Route::get('/dashboard', function () {
     return view('home.index');
 });
 
-Route::get('/user', function () {
-    return view('user.index');
-});
-
-Route::get('/createuser', function () {
-    return view('user.create');
-});
-Route::get('/edituser', function () {
-    return view('user.edit');
-});
 
 
