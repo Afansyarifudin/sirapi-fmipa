@@ -34,7 +34,7 @@
                         </div>
                         <div class="col">
                             <label for="TahunPenelitian">Tahun Penelitian</label>
-                            <input type="date" class="form-control" id="TahunPenelitian" placeholder="">
+                            <input type="number" class="form-control" id="TahunPenelitian" placeholder="Tahun">
                         </div>
                     </div>
                     <div class="form-row mb-3">
