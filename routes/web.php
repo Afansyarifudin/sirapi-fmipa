@@ -30,5 +30,8 @@ Route::get('/penelitian', function () {
 Route::get('/create', function () {
     return view('penelitian.create');
 });
+Route::get('/show', function () {
+    return view('penelitian.show');
+});
 
 
