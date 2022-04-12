@@ -52,7 +52,7 @@
         </div>
         <div class="form-group col-md-6">
             <label for="inputPassword">Password</label>
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            <input type="text" class="form-control" id="inputPassword" placeholder="Password">
         </div>
     </div>
     {{-- <div class="form-row">
@@ -97,7 +97,7 @@
             <label for="gridCheck">Check me out</label>
         </div>
     </div> --}}
-    <button type="submit" class="btn btn-primary">Simpan</button>
+    <a href="#" class="btn btn-primary float-right">Simpan</a>
 </form>
 @endsection
 @push('js')
