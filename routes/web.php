@@ -32,5 +32,8 @@ Route::get('/user', function () {
 Route::get('/createuser', function () {
     return view('user.create');
 });
+Route::get('/edituser', function () {
+    return view('user.edit');
+});
 
 

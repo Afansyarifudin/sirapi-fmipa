@@ -6,8 +6,8 @@
             <div class="card-body">
                 <div class="row align-items-center">
                     <div class="col-md-8">
-                        <h4><b>Tambah Data User</b></h4>
-                        <p>Menambahkan Data User</p>
+                        <h4><b>Edit Data User</b></h4>
+                        <p>Mengedit Data User</p>
                     </div>
                 </div>
             </div>

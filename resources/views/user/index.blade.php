@@ -38,7 +38,6 @@
                         <td></td>
                         <td></td>
                         <td class="text-center d-inline-flex">
-                            <a href="#" class="badge badge-success mx-1" data-toggle="tooltip" title= "Show"><i class="anticon anticon-select"></i></a>
                             <a href="#" class="badge badge-primary mx-1" data-toggle="tooltip" title= "Edit"><i class='fas fa-user-edit'></i></a>
                             <a href="#" class="badge badge-danger mx-1"data-toggle="tooltip" title= "Delete"><i class='far fa-trash-alt'></i></a>
                         </td>
