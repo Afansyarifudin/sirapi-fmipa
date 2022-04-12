@@ -27,5 +27,8 @@ Route::get('/dashboard', function () {
 Route::get('/penelitian', function () {
     return view('penelitian.index');
 });
+Route::get('/create', function () {
+    return view('penelitian.create');
+});
 
 
