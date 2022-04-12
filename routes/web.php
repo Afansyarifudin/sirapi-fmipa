@@ -30,4 +30,7 @@ Route::get('/skpangkat', function () {
 Route::get('/createskpangkat', function () {
     return view('sk_pangkat.create');
 });
+Route::get('/showskpangkat', function () {
+    return view('sk_pangkat.show');
+});
 

@@ -6,8 +6,8 @@
             <div class="card-body">
                 <div class="row align-items-center">
                     <div class="col-md-8">
-                        <h4><b>Tambah Surat Masuk</b></h4>
-                        <p>Menambahkan Daftar Surat Masuk</p>
+                        <h4><b>Tambah SK Pangkat</b></h4>
+                        <p>Menambahkan Daftar SK Pangkat</p>
                     </div>
                 </div>
             </div>
