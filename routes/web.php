@@ -24,6 +24,7 @@ Route::get('/login', function () {
 Route::get('/dashboard', function () {
     return view('home.index');
 });
+
 Route::get('/skpangkat', function () {
     return view('sk_pangkat.index');
 });
@@ -32,5 +33,8 @@ Route::get('/createskpangkat', function () {
 });
 Route::get('/showskpangkat', function () {
     return view('sk_pangkat.show');
+  
+Route::get('/setting', function () {
+    return view('setting.index');
 });
 
