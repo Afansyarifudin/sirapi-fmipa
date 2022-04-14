@@ -24,4 +24,7 @@ Route::get('/login', function () {
 Route::get('/dashboard', function () {
     return view('home.index');
 });
+Route::get('/setting', function () {
+    return view('setting.index');
+});
 
