@@ -34,14 +34,21 @@ Route::get('/show', function () {
     return view('penelitian.show');
 });
 
+Route::get('/user', function() {
+    return view('user.index');
+});
+
 Route::get('/skpangkat', function () {
     return view('sk_pangkat.index');
 });
+
 Route::get('/createskpangkat', function () {
     return view('sk_pangkat.create');
 });
+
 Route::get('/showskpangkat', function () {
     return view('sk_pangkat.show');
+});
   
 Route::get('/setting', function () {
     return view('setting.index');
