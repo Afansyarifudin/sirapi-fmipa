@@ -1,169 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>E-Arsip FMIPA UNNES</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="{{ url('assets/images/logo/favicon.png') }}">
-    <link href="{{ url('assets/css/app.min.css') }}" rel="stylesheet">
-    <link href="{{ url('assets/vendors/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
-    @stack('css')
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top scrolling-navbar">
-        <div class="container">
-            <!-- Navbar brand -->
-            <a class="navbar-brand" href="#">
-                <img alt="logoarsip" src="{{ url('assets/images/logoarsip.png') }}" height="50"/>
-            </a>
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <!-- Collapse button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav me-auto">
 
-            <!-- Collapsible content -->
-            <div class="collapse navbar-collapse" id="basicExampleNav">
-                <!-- Links -->
-                <ul class="navbar-nav mr-auto smooth-scroll"></ul>
-                </ul>
-                <!-- Links -->
-                <ul class="navbar-nav nav-flex-icons">
-                    <!-- Collapsible content -->
-                    <div class="collapse navbar-collapse" id="basicExampleNav">
-                        <!-- Links -->
-                        <ul class="navbar-nav mr-auto smooth-scroll" style="font-size: 20px">
-                            <li class="nav-item active px-3">
-                                <a class="nav-link" href="#">Beranda</a>
-                            </li>
-                            <li class="nav-item active px-3">
-                                <a class="nav-link" href="#">Arsip</a>
-                            </li>
-                            <li class="nav-item active px-3">
-                                <a class="nav-link" href="#">Login</a>
-                            </li>
+                    </ul>
 
-                            <!-- Dropdown -->
-                            {{--  <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </li>  --}}
-                        </ul>
-                        <!-- Links -->
-                    </div>
-                    <!-- Collapsible content -->
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- End Navbar -->
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
 
-    <!-- Content -->
-    <header class="masthead " >
-        <h1 class="mb-5">Arsip</h1>
-        <div class="d-flex align-items-center flex-column">
-            <div class="row">
-                <div class="col-lg-2 mb-3">
-                    <!-- Accordion -->
-                    <div class="accordion" id="accordion-default">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="card-title">
-                                    <a data-toggle="collapse" href="#collapseOneDefault">
-                                        Arsip Terbaru
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
                                     </a>
-                                </h5>
-                            </div>
-                            <div id="collapseOneDefault" class="collapse show" data-parent="#accordion-default">
-                                <div class="card-body">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="card-title">
-                                    <a class="collapsed" data-toggle="collapse" href="#collapseTwoDefault">
-                                        Jurusan
-                                    </a>
-                                </h5>
-                            </div>
-                            <div id="collapseTwoDefault" class="collapse" data-parent="#accordion-default">
-                                <div class="card-body">
-                                    ...
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-10">
-                    <div class="container-fluid">    
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-8">
-                                            <h4><b>DATA ARSIP</b></h4>
-                                            <p>Di bawah ini merupakan list daftar arsip surat yang tersedia dalam sistem</p>
-                                        </div>
-                                    </div>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <table class="table" id="datatable">
-                                        <thead>
-                                            <th>No</th>
-                                            <th>Judul</th>
-                                            <th>No Surat Lengkap</th>
-                                            <th>Rak Arsip</th>
-                                            <th>Unit Arsip</th>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            </li>
+                        @endguest
+                    </ul>
                 </div>
             </div>
-        </div>
-    </header>
-    <!-- End Content -->
+        </nav>
 
-    <script src="{{ url('assets/js/vendors.min.js') }}"></script>
-    <script src="{{ url('assets/js/app.min.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="{{ url('assets/vendors/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ url('assets/vendors/datatables/dataTables.bootstrap.min.js') }}"></script>
-
-    @stack('js')
-
+        <main class="py-4">
+            @yield('content')
+        </main>
+    </div>
 </body>
-
 </html>

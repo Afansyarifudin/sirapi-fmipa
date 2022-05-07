@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>WearIt</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <link href="{{ url('homebite/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url('homebite/assets/owl.carousel/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ url('homebite/assets/owl.carousel/owl.theme.default.css') }}" rel="stylesheet">

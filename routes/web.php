@@ -1,5 +1,6 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,8 +50,15 @@ Route::get('/createskpangkat', function () {
 Route::get('/showskpangkat', function () {
     return view('sk_pangkat.show');
 });
-  
+
 Route::get('/setting', function () {
     return view('setting.index');
 });
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
 
