@@ -18,18 +18,19 @@ PROYEK TUGAS REKAYASA PERANGKAT LUNAK
 5. mysql 5.7.33 (incllude di web server || install sendiri)
 6. php 7.4.19 (include di web serve || install sendiri)
 
-## Install Laravel
+## How to Do 
  0. wajib punya Git dan akun Github 
  1. masukkan ```git clone https://github.com/Afansyarifudin/legalisir-app.git```
  2. Run ```composer update``` pada cmd di folder project. kalo error coba ```composer install --ignore-platform-reqs``` or ```composer update --ignore-platform-reqs```
  3. Copy file .env "copy paste .env.examples ke file .env" 
- 4. Atur file .env (Nama APP_NAME=e-arsip, DB_DATABASE=e-arsip)
+ 4. Atur file .env (Nama APP_NAME=Sirapi-fmipa, DB_DATABASE=sirapi-fmipa)
  5. Run ```php artisan key:generate```
  6. Buat Database sesuai variable .env yang dibuat tadi
  7. Setelah Kalian mengatur .env yang ada jangan lupa untuk menjalankan command berikut
     "php artisan migrate:fresh --seed"
     gunanya untuk merefresh database yang ada dan memberikan seed untuk user login and register (biar bisa di masukin ke dalam table users)
- 8. Happy Coding!
+ 8. Untuk melihat User dan Password seeder bisa pergi ke e-arsip/database/seeder/UserSeeder.php
+ 9. Happy Coding!
 
 
 ## Upload Project -> github 
