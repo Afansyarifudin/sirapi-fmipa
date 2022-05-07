@@ -29,7 +29,7 @@ PROYEK TUGAS REKAYASA PERANGKAT LUNAK
  7. Setelah Kalian mengatur .env yang ada jangan lupa untuk menjalankan command berikut
     "php artisan migrate:fresh --seed"
     gunanya untuk merefresh database yang ada dan memberikan seed untuk user login and register (biar bisa di masukin ke dalam table users)
- 8. Untuk melihat User dan Password seeder bisa pergi ke e-arsip/database/seeder/UserSeeder.php
+ 8. Untuk melihat User dan Password seeder bisa pergi ke ```e-arsip/database/seeder/UserSeeder.php```
  9. Happy Coding!
 
 
