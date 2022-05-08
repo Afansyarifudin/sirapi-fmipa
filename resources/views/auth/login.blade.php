@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>E-Arsip FMIPA UNNES</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/images/logo/favicon.png">
+    <!-- Icon Arsip -->
+    <link rel="shortcut icon" href="{{ url('assets/images/iconarsip.png') }}">
 
     <!-- page css -->
 
