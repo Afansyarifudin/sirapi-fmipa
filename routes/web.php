@@ -59,7 +59,22 @@ Route::get('/setting', function () {
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+// Route for guest
+Route::middleware(['guest'])->group(function () {
+
+    //
+
+});
+
+// Route for authenticat user need to login
+Route::middleware(['auth'])->group(function () {
+
+    //
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+});
 
 
 
