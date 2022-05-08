@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,8 +51,15 @@ Route::get('/createskpangkat', function () {
 Route::get('/showskpangkat', function () {
     return view('sk_pangkat.show');
 });
-  
+
 Route::get('/setting', function () {
     return view('setting.index');
 });
+
+
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
 
