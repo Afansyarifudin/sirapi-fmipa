@@ -10,7 +10,7 @@
                     <span class="title">Dahsboard</span>
                 </a>
             </li>
-            <li class="nav-item dropdown">
+            {{-- <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
                     <span class="icon-holder">
                         <i class="anticon anticon-file-done"></i>
@@ -47,13 +47,56 @@
                         <a href="">Surat Keluar</a>
                     </li>
                 </ul>
+            </li> --}}
+            {{-- Sidebar Role Dosen --}}
+            <li class="nav-item dropdown">
+                <a href="">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-solution"></i>
+                    </span>
+                    <span class="title" >Data Arsip</span>
+                </a>
+            </li>
+            {{-- Sidebar Role Operator--}}
+            <li class="nav-item dropdown">
+                <a href="">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-solution"></i>
+                    </span>
+                    <span class="title" >Manajemen Arsip</span>
+                </a>
             </li>
             <li class="nav-item dropdown">
                 <a href="">
                     <span class="icon-holder">
                         <i class="anticon anticon-solution"></i>
                     </span>
-                    <span class="title" >Data User</span>
+                    <span class="title" >Kategori</span>
+                </a>
+            </li>
+            {{-- sidebar role admin --}}
+            <li class="nav-item dropdown">
+                <a href="">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-solution"></i>
+                    </span>
+                    <span class="title" >Manajemen User</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-solution"></i>
+                    </span>
+                    <span class="title" >Role</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-solution"></i>
+                    </span>
+                    <span class="title" >Permission</span>
                 </a>
             </li>
             <li class="nav-item dropdown">
@@ -62,6 +105,15 @@
                         <i class="anticon anticon-setting"></i>
                     </span>
                     <span class="title" >Pengaturan</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-setting"></i>
+                    </span>
+                    <span class="title" >Logout</span>
                 </a>
             </li>
         </ul>
