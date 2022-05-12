@@ -20,7 +20,7 @@
         <div class="container">
             <!-- Navbar brand -->
             <a class="navbar-brand" href="#">
-                <img alt="logoarsip" src="{{ url('assets/images/logoarsip.png') }}" height="50"/>
+                <img alt="logoarsip" src="{{ url('assets/images/logo2.png') }}" height="50"/>
             </a>
 
             <!-- Collapse button -->
@@ -46,6 +46,12 @@
                             <li class="nav-item active px-3">
                                 <a class="nav-link" href="#">Arsip</a>
                             </li> --}}
+                            <li class="nav-item active px-3">
+                                <a class="nav-link" href="/">Beranda</a>
+                            </li>
+                            <li class="nav-item active px-3">
+                                <a class="nav-link" href="{{ route('guest.guest_arsip') }}">Arsip</a>
+                            </li>
                             <li class="nav-item active px-3">
                                 <a class="nav-link" href="{{ route('login') }}">Login</a>
                             </li>
