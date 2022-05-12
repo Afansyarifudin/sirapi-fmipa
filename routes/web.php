@@ -41,7 +41,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 
-    // route for manajemen user @admin
+    // route for manajemen user @admin + prefix 
 
 
 
