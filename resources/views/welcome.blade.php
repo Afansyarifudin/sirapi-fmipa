@@ -44,7 +44,7 @@
                                 <a class="nav-link" href="/">Beranda</a>
                             </li>
                             <li class="nav-item active px-3">
-                                <a class="nav-link" href="#">Arsip</a>
+                                <a class="nav-link" href="{{ route('guest.arsip') }}">Arsip</a>
                             </li>
                             <li class="nav-item active px-3">
                                 <a class="nav-link" href="{{ route('login') }}">Login</a>
