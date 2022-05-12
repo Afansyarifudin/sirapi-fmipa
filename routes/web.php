@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArsipGuestController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -22,8 +23,14 @@ Auth::routes();
 // Route for guest
 Route::middleware(['guest'])->group(function () {
 
+    // Route for welcome page
     Route::get('/', function () {
         return view('welcome');
+    });
+
+    // Route for arsip guest
+    Route::name('guest.')->group(function () {
+        Route::get('/arsip', [ArsipGuestController::class, 'index'])->name('arsip');
     });
 
 });
@@ -31,8 +38,26 @@ Route::middleware(['guest'])->group(function () {
 // Route for authenticat user need to login
 Route::middleware(['auth'])->group(function () {
 
-    //
+    // Route for dashboard/ home
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+    // Route for
+
+
+
+    // Route for
+
+
+
+    // Route for
+
+
+
+    // Route for
+
+
+
 
 
 });

@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top scrolling-navbar">
         <div class="container">
             <!-- Navbar brand -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img alt="logoarsip" src="{{ url('assets/images/logoarsip.png') }}" height="50"/>
             </a>
 
@@ -85,10 +85,10 @@
                 Untuk Melihat Arsip Yang Tersedia
             </h4>
             <div class="btn-wrapper text-center my-4 py-4">
-                <button type="submit" class="btn btn-primary btn-rounded btn-lg" >
+                <a href="{{ route('guest.arsip') }}" type="submit" class="btn btn-primary btn-rounded btn-lg" >
                     <i class="fa fa-envelope-open-text py-2" > </i>
                     Arsip
-                </button>
+                </a>
             </div>
         </div>
     </div>
