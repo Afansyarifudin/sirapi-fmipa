@@ -53,7 +53,7 @@
             <li class="nav-item dropdown">
                 <a href="">
                     <span class="icon-holder">
-                        <i class="anticon anticon-solution"></i>
+                        <i class="anticon anticon-book"></i>
                     </span>
                     <span class="title" >Data Arsip</span>
                 </a>
@@ -64,7 +64,7 @@
             <li class="nav-item dropdown">
                 <a href="">
                     <span class="icon-holder">
-                        <i class="anticon anticon-solution"></i>
+                        <i class="anticon anticon-folder-open"></i>
                     </span>
                     <span class="title" >Manajemen Arsip</span>
                 </a>
@@ -72,7 +72,7 @@
             <li class="nav-item dropdown">
                 <a href="">
                     <span class="icon-holder">
-                        <i class="anticon anticon-solution"></i>
+                        <i class="anticon anticon-contacts"></i>
                     </span>
                     <span class="title" >Kategori</span>
                 </a>
@@ -91,7 +91,7 @@
             <li class="nav-item dropdown">
                 <a href="">
                     <span class="icon-holder">
-                        <i class="anticon anticon-solution"></i>
+                        <i class="anticon anticon-usergroup-add"></i>
                     </span>
                     <span class="title" >Role</span>
                 </a>
@@ -99,7 +99,7 @@
             <li class="nav-item dropdown">
                 <a href="">
                     <span class="icon-holder">
-                        <i class="anticon anticon-solution"></i>
+                        <i class="anticon anticon-security-scan"></i>
                     </span>
                     <span class="title" >Permission</span>
                 </a>
@@ -118,7 +118,7 @@
                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                     <span class="icon-holder">
-                        <i class="anticon anticon-setting"></i>
+                        <i class="anticon anticon-logout"></i>
                     </span>
                     <span class="title" >Logout</span>
                 </a>

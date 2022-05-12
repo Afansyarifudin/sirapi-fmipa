@@ -20,7 +20,7 @@
         <div class="container">
             <!-- Navbar brand -->
             <a class="navbar-brand" href="/">
-                <img alt="logoarsip" src="{{ url('assets/images/logoarsip.png') }}" height="50"/>
+                <img alt="logoarsip" src="{{ url('assets/images/logo2.png') }}" height="50"/>
             </a>
 
             <!-- Collapse button -->
