@@ -51,7 +51,7 @@
             {{-- Sidebar Role Dosen --}}
             @role('dosen')
             <li class="nav-item dropdown">
-                <a href="">
+                <a href="{{ route('data.index') }}">
                     <span class="icon-holder">
                         <i class="anticon anticon-book"></i>
                     </span>
