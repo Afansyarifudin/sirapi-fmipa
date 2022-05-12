@@ -8,6 +8,6 @@ class ArsipGuestController extends Controller
 {
     public function index()
     {
-        return "Ini Arsip Guest";
+        return view('guest.arsip');
     }
 }

@@ -44,7 +44,7 @@
                                 <a class="nav-link" href="/">Beranda</a>
                             </li>
                             <li class="nav-item active px-3">
-                                <a class="nav-link" href="{{ route('guest.arsip') }}">Arsip</a>
+                                <a class="nav-link" href="{{ route('guest.guest_arsip') }}">Arsip</a>
                             </li>
                             <li class="nav-item active px-3">
                                 <a class="nav-link" href="{{ route('login') }}">Login</a>
@@ -85,7 +85,7 @@
                 Untuk Melihat Arsip Yang Tersedia
             </h4>
             <div class="btn-wrapper text-center my-4 py-4">
-                <a href="{{ route('guest.arsip') }}" type="submit" class="btn btn-primary btn-rounded btn-lg" >
+                <a href="{{ route('guest.guest_arsip') }}" type="submit" class="btn btn-primary btn-rounded btn-lg" >
                     <i class="fa fa-envelope-open-text py-2" > </i>
                     Arsip
                 </a>

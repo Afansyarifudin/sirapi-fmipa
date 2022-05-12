@@ -36,7 +36,7 @@ Route::middleware(['guest'])->group(function () {
 
     // Route for arsip guest
     Route::name('guest.')->group(function () {
-        Route::get('/arsip', [ArsipGuestController::class, 'index'])->name('arsip');
+        Route::get('/arsip', [ArsipGuestController::class, 'index'])->name('guest_arsip');
     });
 
 });
