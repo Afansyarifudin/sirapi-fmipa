@@ -81,7 +81,7 @@
             {{-- sidebar role admin --}}
             @role('admin')
             <li class="nav-item dropdown">
-                <a href="">
+                <a href="{{ route('user.index') }}">
                     <span class="icon-holder">
                         <i class="anticon anticon-solution"></i>
                     </span>
@@ -107,7 +107,7 @@
             @endrole()
             {{-- role yang bisa di akses semua user --}}
             <li class="nav-item dropdown">
-                <a href="#">
+                <a href="{{ route('setting') }}">
                     <span class="icon-holder">
                         <i class="anticon anticon-setting"></i>
                     </span>

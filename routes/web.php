@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ArsipGuestController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,12 +44,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
-    // Route for
+    // Route for pengaturan
+    Route::get('/setting', [ProfileController::class, 'index'])->name('setting');
 
 
 
-    // Route for
-
+    // Route for user
+    Route::get('/user', [UserController::class, 'index'])->name('user');
+    Route::resource('user', UserController::class);
 
 
     // Route for
