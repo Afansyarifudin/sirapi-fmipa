@@ -2,21 +2,6 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="page-header no-gutters has-tab">
-                    {{-- <div class="col-md-8">
-                        <h4><b>Surat Masuk</b></h4>
-                    </div> --}}
-                    <h2><b>Pengaturan</b></h2>
-                    <ul class="nav nav-tabs" >
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#tab-account">Account</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="col-md-12">
         <div class="tab-pane fade show active" id="tab-account" >
@@ -45,11 +30,11 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label class="font-weight-semibold" for="NamaLengkap">Nama Lengkap:</label>
-                                <input type="text" class="form-control" id="NamaLengkap" placeholder="Nama Lengkap" >
+                                <input type="text" class="form-control" id="NamaLengkap" placeholder="Nama Lengkap" value="{{ Auth::user()->name }}">
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="font-weight-semibold" for="Email">Email:</label>
-                                <input type="email" class="form-control" id="Email" placeholder="Email" value="@students.unnes.ac.id">
+                                <input type="email" class="form-control" id="Email" placeholder="Email" value="{{ Auth::user()->email }}">
                             </div>
                         </div>
                         <div class="form-row">
@@ -80,7 +65,11 @@
                             <div class="form-group col-md-6">
                                <label class="font-weight-semibold" for="NIP">NIP</label>
                                <input type="number" class="form-control" id="NIP" placeholder="NIP" >
-                           </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-semibold" for="alamat">Alamat</label>
+                                <input type="text" class="form-control" id="alamat" placeholder="Alamat" >
+                            </div>
                        </div>
                        <a href="#" class="btn btn-primary float-right">Simpan</a>
                     </form>

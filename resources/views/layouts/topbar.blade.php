@@ -26,7 +26,7 @@
             @else
                 <li>
                     <h6 class="mt-2 mx-3 font-weight-semibold"> 
-                        Afan Admin
+                        {{ Auth::user()->name }}
                     </h6>
                 </li>
                 <li class="dropdown dropdown-animated scale-left">
