@@ -15,63 +15,46 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/login', function () {
-    return view('auth.login');
-});
-
-Route::get('/dashboard', function () {
-    return view('home.index');
-});
-Route::get('/penelitian', function () {
-    return view('penelitian.index');
-});
-Route::get('/create', function () {
-    return view('penelitian.create');
-});
-Route::get('/show', function () {
-    return view('penelitian.show');
-});
-
-Route::get('/user', function() {
-    return view('user.index');
-});
-
-Route::get('/skpangkat', function () {
-    return view('sk_pangkat.index');
-});
-
-Route::get('/createskpangkat', function () {
-    return view('sk_pangkat.create');
-});
-
-Route::get('/showskpangkat', function () {
-    return view('sk_pangkat.show');
-});
-
-Route::get('/setting', function () {
-    return view('setting.index');
-});
-
-
 Auth::routes();
 
 
-// Route for guest
+// Route for guest --> taruh semua route yang bisa di akses tanpa login dulu
 Route::middleware(['guest'])->group(function () {
 
-    //
+    // route for arsip-guest
+
 
 });
 
-// Route for authenticat user need to login
+// Route for authenticate user need to login --> taruh semua route yang user perlu login dulu di sini
 Route::middleware(['auth'])->group(function () {
 
-    //
+    // route for home/ dashboard
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+    // route for arsip | manajemen arsip @dosen & @operator
+
+
+
+    // route for category @operator
+
+
+
+    // route for manajemen user @admin + prefix 
+
+
+
+    // route for permission @admin
+
+
+
+    // route for role @admin
+
+
+
+    // route for setting @dosen, @operator, dan @admin
+
 
 
 });
