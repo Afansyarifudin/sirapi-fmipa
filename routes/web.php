@@ -6,6 +6,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
+use App\Http\Controllers\ManajemenArsipController;
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -65,8 +67,12 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('permission', PermissionController::class);
 
 
+    // Route for Manajemen Arsip
+    Route::resource('arsip', ManajemenArsipController::class);
 
 
+    // Route for Kategori
+    Route::resource('category', KategoriController::class);
 
 });
 

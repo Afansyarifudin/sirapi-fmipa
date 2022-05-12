@@ -62,7 +62,7 @@
             {{-- Sidebar Role Operator--}}
             @role('operator')
             <li class="nav-item dropdown">
-                <a href="">
+                <a href="{{ route('arsip.index')}}">
                     <span class="icon-holder">
                         <i class="anticon anticon-folder-open"></i>
                     </span>
@@ -70,7 +70,7 @@
                 </a>
             </li>
             <li class="nav-item dropdown">
-                <a href="">
+                <a href="{{ route('category.index')}}">
                     <span class="icon-holder">
                         <i class="anticon anticon-contacts"></i>
                     </span>
