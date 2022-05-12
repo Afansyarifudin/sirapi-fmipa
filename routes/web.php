@@ -8,6 +8,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ManajemenArsipController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\DataArsipController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -51,6 +52,10 @@ Route::middleware(['auth'])->group(function () {
     // Route for pengaturan
     Route::get('/setting', [ProfileController::class, 'index'])->name('setting');
 
+    // Route for pengaturan
+    //Route::get('/dosen', [DataArsipController::class, 'index'])->name('dosen');
+
+    Route::resource('data', DataArsipController::class);
 
 
     // Route for user
@@ -73,6 +78,7 @@ Route::middleware(['auth'])->group(function () {
 
     // Route for Kategori
     Route::resource('category', KategoriController::class);
+
 
 });
 
