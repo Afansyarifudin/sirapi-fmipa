@@ -4,6 +4,8 @@ use App\Http\Controllers\ArsipGuestController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\PermissionController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -54,11 +56,13 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('user', UserController::class);
 
 
-    // Route for
+    // Route for role
+    Route::resource('role', RoleController::class);
 
 
 
-    // Route for
+    // Route for permission
+    Route::resource('permission', PermissionController::class);
 
 
 
