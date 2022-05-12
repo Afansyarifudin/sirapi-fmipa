@@ -25,7 +25,7 @@
                         <div class="col-md-7 col-lg-5 m-h-auto">
                             <div class="card shadow-lg">
                                 <div class="card-body">
-                                    <img class="rounded mx-auto d-block"  alt="" src="{{ url('assets/images/e-arsip2.png ') }}" style="width: 200px">
+                                    <img class="rounded mx-auto d-block"  alt="" src="{{ url('assets/images/logo2.png ') }}" style="width: 200px">
                                     {{-- <div class="d-flex align-items-center justify-content-between m-b-30">
                                         <img class="img-fluid"  alt="" src="{{ url('assets/images/e-arsip2.png ') }}" style="height:90px">
                                     </div> --}}

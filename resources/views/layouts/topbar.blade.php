@@ -1,6 +1,8 @@
 <div class="header">
     <div class="logo logo-dark d-flex align-items-center justify-content-center">
-        <img alt="" src="{{ url('assets/images/e-arsip2.png ') }}" height="50px">
+        <a href="/home">
+            <img alt="" src="{{ url('assets/images/logo2.png ') }}" height="50px">
+        </a>
     </div>
     <div class="nav-wrap">
         <ul class="nav-left">
@@ -22,6 +24,11 @@
                 {{-- content --}}
 
             @else
+                <li>
+                    <h6 class="mt-2 mx-3 font-weight-semibold"> 
+                        Afan Admin
+                    </h6>
+                </li>
                 <li class="dropdown dropdown-animated scale-left">
                     <div class="pointer" data-toggle="dropdown">
                         <div class="avatar avatar-icon  m-h-10 m-r-15">
@@ -46,10 +53,17 @@
                         <a href="#" class="dropdown-item d-block p-h-15 p-v-10">
                             <div class="d-flex align-items-center justify-content-between">
                                 <div>
-                                    <i class="anticon opacity-04 font-size-16 anticon-lock"></i>
-                                    <span class="m-l-10">Setting</span>
+                                    <i class="anticon opacity-04 font-size-16 anticon-user"></i>
+                                    <span class="m-l-10">Profile</span>
                                 </div>
-                                <i class="anticon font-size-10 anticon-right"></i>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item d-block p-h-15 p-v-10">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <i class="anticon opacity-04 font-size-16 anticon-lock"></i>
+                                    <span class="m-l-10">Pengaturan</span>
+                                </div>
                             </div>
                         </a>
                         <a href=" {{ route('logout') }}" class="dropdown-item d-block p-h-15 p-v-10" onclick="event.preventDefault();
@@ -59,7 +73,6 @@
                                     <i class="anticon opacity-04 font-size-16 anticon-logout"></i>
                                     <span class="m-l-10">Logout</span>
                                 </div>
-                                <i class="anticon font-size-10 anticon-right"></i>
                             </div>
                         </a>
                         <form id="logout-form" action=" {{ route('logout') }}" method="POST" class="d-none">
