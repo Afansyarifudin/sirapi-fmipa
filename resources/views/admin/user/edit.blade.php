@@ -16,31 +16,26 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label for="inputState">User-As</label>
-                            <select id="inputState" class="form-control">
-                                <option selected>Admin</option>
-                                <option>Dosen</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="SifatSurat">Username</label>
-                            <input type="text" class="form-control" placeholder="Sifat Surat">
+                <form method="POST" action="">
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="name">Nama</label>
+                            <input type="text" class="form-control" id="name" placeholder="nama">
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
+                    <div class="form">
+                        <div class="form-group">
                             <label for="inputEmail">Email</label>
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputPassword">Password</label>
-                            <input type="text" class="form-control" id="inputPassword" placeholder="Password">
+                            <input type="email" class="form-control" id="email" placeholder="Email">
                         </div>
                     </div>
-                    <a href="#" class="btn btn-primary float-right">Simpan</a>
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="text" class="form-control" id="password" placeholder="password">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary float-right">Simpan</button>
                 </form>
             </div>
         </div>

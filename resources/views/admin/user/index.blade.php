@@ -13,7 +13,7 @@
                         <p>Di bawah ini merupakan list daftar user yang terdia dalam sistem</p>
                     </div>
                     <div class="col-md-4">
-                        <a href="#" class="btn btn-primary float-right">Tambah User</a>
+                        <a href="{{ route('user.create') }}" class="btn btn-primary float-right">Tambah User</a>
                     </div>
                 </div>
             </div>
@@ -25,8 +25,7 @@
                 <table class="table" id="datatable">
                     <thead>
                         <th>No</th>
-                        <th>Username</th>
-                        <th>Nama Lengkap</th>
+                        <th>Nama</th>
                         <th>Email</th>
                         <th style="width: 10px; text-align: center"><i class='anticon anticon-setting'></i></th>
                     </thead>
@@ -34,9 +33,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
                         <td class="text-center d-inline-flex">
-                            <a href="#" class="badge badge-success mx-1" data-toggle="tooltip" title= "Show"><i class="anticon anticon-eye"></i></a>
                             <a href="#" class="badge badge-primary mx-1" data-toggle="tooltip" title= "Edit"><i class='fas fa-user-edit'></i></a>
                             <a href="#" class="badge badge-danger mx-1"data-toggle="tooltip" title= "Delete"><i class='far fa-trash-alt'></i></a>
                         </td>
