@@ -15,46 +15,24 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+
 Auth::routes();
 
 
-// Route for guest --> taruh semua route yang bisa di akses tanpa login dulu
+// Route for guest
 Route::middleware(['guest'])->group(function () {
 
-    // route for arsip-guest
-
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
 });
 
-// Route for authenticate user need to login --> taruh semua route yang user perlu login dulu di sini
+// Route for authenticat user need to login
 Route::middleware(['auth'])->group(function () {
 
-    // route for home/ dashboard
+    //
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-
-    // route for arsip | manajemen arsip @dosen & @operator
-
-
-
-    // route for category @operator
-
-
-
-    // route for manajemen user @admin + prefix 
-
-
-
-    // route for permission @admin
-
-
-
-    // route for role @admin
-
-
-
-    // route for setting @dosen, @operator, dan @admin
-
 
 
 });
