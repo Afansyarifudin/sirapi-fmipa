@@ -217,18 +217,4 @@
 
 </body>
 
-<style>
-    /* Home */
-.top-wrapper {
-    background-blend-mode: lighten;
-    background-color: rgba(255,255,255,0.8);
-    animation: zoom 1s;
-    }
-    @keyframes zoom {from {transform: scale(0.5);}to {transform: scale(1);}}
-.top-wrapper h1, h4 {
-    animation: bawahkeatas 1s ;
-    }
-    @keyframes bawahkeatas {from { transform:translate(0px, 1000px);} to {transform:translate(0px, 0px);}}
-</style>
-
 </html>
