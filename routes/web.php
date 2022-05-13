@@ -52,15 +52,12 @@ Route::middleware(['auth'])->group(function () {
     // Route for pengaturan
     Route::get('/setting', [ProfileController::class, 'index'])->name('setting');
 
-    // Route for pengaturan
-    //Route::get('/dosen', [DataArsipController::class, 'index'])->name('dosen');
-
-    Route::resource('data', DataArsipController::class);
-
 
     // Route for user
     Route::get('/user', [UserController::class, 'index'])->name('user');
     Route::resource('user', UserController::class);
+
+    Route::resource('data', DataArsipController::class);
 
 
     // Route for role
