@@ -7,7 +7,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Icon Arsip -->
-    <link rel="shortcut icon" href="{{ url('assets/images/logoUNNES.png') }}">
+    <link rel="shortcut icon" href="{{ url('assets/images/logo_unnes.png') }}">
 
     <!-- page css -->
 
