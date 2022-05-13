@@ -25,11 +25,16 @@
                         <div class="col">
                             <label for="SifatSurat">Sifat Surat</label>
                             <select class="custom-select">
-                                <option value="1">Surat Masuk</option>
-                                <option value="2">Surat Keluar</option>
-                                <option value="3">Sk Pangkat</option>
-                                <option value="4">Penelitian</option>
+                                <option value="1">Private</option>
+                                <option value="2">Publik</option>
+
                               </select>
+                        </div>
+                    </div>
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <label for="Deskripsi">Deskripsi</label>
+                            <input type="text" class="form-control" id="Deskripsi" placeholder=" ">
                         </div>
                     </div>
                     <div class="form-row mb-3">
