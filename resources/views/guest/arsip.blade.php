@@ -131,85 +131,72 @@
                         <div class="col-md-12">
                             <div class="card">
                                 <div class="card-body">
+                                    <div class="row text-nowrap">
+                                        <div class="col-sm-4">
+                                            <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label>Show&nbsp;<select class="form-control form-control-sm custom-select custom-select-sm">
+                                                        <option value="10" selected="">10</option>
+                                                        <option value="25">25</option>
+                                                        <option value="50">50</option>
+                                                        <option value="100">100</option>
+                                                    </select>&nbsp;</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="input-affix m-b-10">
+                                                <i class="prefix-icon anticon anticon-search"></i>
+                                                <input type="text" class="form-control" placeholder="Icon Prefix">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="dropdown dropdown-animated scale-right float-end">
+                                                <button type="button float-end" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                                    Kategori
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <button class="dropdown-item" type="button">Action</button>
+                                                    <button class="dropdown-item" type="button">Another action</button>
+                                                    <button class="dropdown-item" type="button">Something else here</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <table class="table" id="datatable">
                                         <thead>
                                             <th>No</th>
-                                            <th>Judul</th>
-                                            <th>No Surat Lengkap</th>
-                                            <th>Rak Arsip</th>
-                                            <th>Unit Arsip</th>
+                                            <th>Nama Arsip</th>
+                                            <th>Sifat Arsip</th>
+                                            <th>Deskripi</th>
+                                            <th style="width: 10px; text-align: center"><i class='anticon anticon-setting'></i></th>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
-                                            </tr>
+                                            <td>Lorem ipsum dolor sit amet</td>
+                                            <td>Lorem ipsum dolor sit amet</td>
+                                            <td>Lorem ipsum dolor sit amet</td>
+                                            <td>Lorem ipsum dolor sit amet</td>
+                                            <td class="text-center d-inline-flex">
+                                                <a href="#" class="badge badge-success mx-1"data-toggle="tooltip" title= "View"><i class='anticon anticon-select'></i></a>
+                                                <a href="#" class="badge badge-primary mx-1" data-toggle="tooltip" title= "Edit"><i class="anticon anticon-edit"></i></a>
+                                            </td>
                                         </tbody>
                                     </table>
-                                </div>
-                            </div>
-                        {{--  <div class="card shadow">
-                            <div class="card-header py-3">
-                                <p class="text-primary m-0 font-weight-bold">DATA ARSIP</p>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-3"></div>
-                                    <div class="col-md-6"></div>
-                                    <div class="col-md-3">
-                                        <select class="combobox">
-                                            <option value="Select">Penelitian Dosen</option>
-                                            <option value="php">SK Kenaikan Pangkat</option>
-                                            <option value="html">Surat-Surat</option>
-                                        </select>
+                                    <div class="row">
+                                        <div class="col-md-6 align-self-center">
+                                            <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
+                                                <ul class="pagination">
+                                                    <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+                                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+                                                </ul>
+                                            </nav>
+                                        </div>
                                     </div>
                                 </div>
-                                <!-- Tabel -->
-                                <table class="table" id="datatable">
-                                    <thead>
-                                        <th>No</th>
-                                        <th>Judul</th>
-                                        <th>No Surat Lengkap</th>
-                                        <th>Rak Arsip</th>
-                                        <th>Unit Arsip</th>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Lorem ipsum dolor sit amet</td>
-                                            <td>Lorem ipsum dolor sit amet</td>
-                                            <td>Lorem ipsum dolor sit amet</td>
-                                            <td>Lorem ipsum dolor sit amet</td>
-                                        </tr>
-                                </tbody>
-                                </table>
-                                <div class="table-responsive mt-2" id="datatable">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr class="text-center">
-                                                <th>No</th>
-                                                <th>Judul</th>
-                                                <th>No Surat</th>
-                                                <th>Rak Arsip</th>
-                                                <th>Unit Arsip</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Lorem ipsum dolor sit amet</td>
-                                                    <td>Lorem ipsum dolor sit amet</td>
-                                                    <td>Lorem ipsum dolor sit amet</td>
-                                                    <td>Lorem ipsum dolor sit amet</td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
-                        </div>  --}}
                     </div>
                 </div>
             </div>
@@ -220,6 +207,13 @@
     <script src="{{ url('assets/js/app.min.js') }}"></script>
 
     @stack('js')
+    {{--  <script>
+        $(document).ready( function () {
+            $('#datatable').DataTable();
+        } );
+    </script>
+    <script src="{{ url('assets/vendors/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ url('assets/vendors/datatables/dataTables.bootstrap.min.js') }}"></script>  --}}
 
 </body>
 
