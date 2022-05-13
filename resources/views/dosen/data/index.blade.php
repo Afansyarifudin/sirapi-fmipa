@@ -26,10 +26,12 @@
                         <th>No</th>
                         <th>Nama Arsip</th>
                         <th>Sifat Arsip</th>
+                        <th>Deskripsi</th>
                         <th>File Arsip</th>
                         <th style="width: 10px; text-align: center"><i class='anticon anticon-setting'></i></th>
                     </thead>
                     <tbody>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
