@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class KategoriController extends Controller
 {
@@ -13,7 +14,13 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        return view('operator.category.index');
+        $category_list = Category::all();
+
+        if($request->ajax()){
+            return datatable() -> of($category_list)-> make(true);
+        }
+
+        return view('operator.category.index', compact('category_list'));
     }
 
     /**
