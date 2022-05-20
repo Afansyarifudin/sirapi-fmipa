@@ -27,20 +27,20 @@
                 <!-- Links -->
                 <ul class="navbar-nav mr-auto smooth-scroll"></ul>
                 </ul>
-                <!-- Links -->
+                <!-- Links -->x 
                 <ul class="navbar-nav nav-flex-icons">
                     <!-- Collapsible content -->
                     <div class="collapse navbar-collapse" id="basicExampleNav">
                         <!-- Links -->
                         <ul class="navbar-nav mr-auto smooth-scroll" style="font-size: 20px">
                             <li class="nav-item active px-3">
-                                <a class="nav-link" href="#">Beranda</a>
+                                <a class="nav-link" href="/">Beranda</a>
                             </li>
                             <li class="nav-item active px-3">
-                                <a class="nav-link" href="#">Arsip</a>
+                                <a class="nav-link" href="{{ route('guest.guest_arsip') }}">Arsip</a>
                             </li>
                             <li class="nav-item active px-3">
-                                <a class="nav-link" href="#">Login</a>
+                                <a class="nav-link" href="{{ route('login') }}">Login</a>
                             </li>
                             <!-- Dropdown -->
                             {{--  <li class="nav-item dropdown">
