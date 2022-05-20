@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <title>Sirapi-fmipa</title>
     <link rel="shortcut icon" href="{{ url('assets/images/logo_unnes.png') }}">
     <link href="{{ url('assets/css/app.min.css') }}" rel="stylesheet">
-
+    <link href="{{ url('assets/vendors/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet">
     @stack('css')
-
 </head>
-
 <body>
-    <!--Navbar-->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top scrolling-navbar">
         <div class="container">
             <!-- Navbar brand -->
             <a class="navbar-brand" href="#">
-                <img alt="logoarsip" src="{{ url('assets/images/logo2.png') }}" height="50"/>
+                <img alt="logoarsip" src="{{ url('assets/images/logoarsip.png') }}" height="50"/>
             </a>
-
             <!-- Collapse button -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <!-- Collapsible content -->
             <div class="collapse navbar-collapse" id="basicExampleNav">
                 <!-- Links -->
@@ -40,22 +33,15 @@
                     <div class="collapse navbar-collapse" id="basicExampleNav">
                         <!-- Links -->
                         <ul class="navbar-nav mr-auto smooth-scroll" style="font-size: 20px">
-                            {{-- <li class="nav-item active px-3">
-                                <a class="nav-link" href="/">Beranda</a>
+                            <li class="nav-item active px-3">
+                                <a class="nav-link" href="#">Beranda</a>
                             </li>
                             <li class="nav-item active px-3">
                                 <a class="nav-link" href="#">Arsip</a>
-                            </li> --}}
-                            <li class="nav-item active px-3">
-                                <a class="nav-link" href="/">Beranda</a>
                             </li>
                             <li class="nav-item active px-3">
-                                <a class="nav-link" href="{{ route('guest.guest_arsip') }}">Arsip</a>
+                                <a class="nav-link" href="#">Login</a>
                             </li>
-                            <li class="nav-item active px-3">
-                                <a class="nav-link" href="{{ route('login') }}">Login</a>
-                            </li>
-
                             <!-- Dropdown -->
                             {{--  <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -73,8 +59,9 @@
             </div>
         </div>
     </nav>
+    <!-- End Navbar -->
 
-    <!--Isi-->
+    <!-- Content -->
     <header class="masthead " >
         <h1 class="mb-5">Arsip</h1>
         <div class="d-flex align-items-center flex-column">
@@ -112,6 +99,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- End Accordion -->
                 </div>
 
                 <div class="col-lg-10">
@@ -130,25 +118,9 @@
                         </div>
                         <div class="col-md-12">
                             <div class="card">
-                                <div class="card-body">
-                                    <div class="row text-nowrap">
-                                        <div class="col-sm-4">
-                                            <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label>Show&nbsp;<select class="form-control form-control-sm custom-select custom-select-sm">
-                                                        <option value="10" selected="">10</option>
-                                                        <option value="25">25</option>
-                                                        <option value="50">50</option>
-                                                        <option value="100">100</option>
-                                                    </select>&nbsp;</label>
-                                            </div>
-                                        </div>
+                                    <div class="row mx-2 mt-3">
                                         <div class="col-md-4">
-                                            <div class="input-affix m-b-10">
-                                                <i class="prefix-icon anticon anticon-search"></i>
-                                                <input type="text" class="form-control" placeholder="Icon Prefix">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="dropdown dropdown-animated scale-right float-end">
+                                            <div class="dropdown dropdown-animated scale-right">
                                                 <button type="button float-end" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                                                     Kategori
                                                 </button>
@@ -160,61 +132,46 @@
                                             </div>
                                         </div>
                                     </div>
+                                <div class="card-body mb-2">
                                     <table class="table" id="datatable">
                                         <thead>
                                             <th>No</th>
-                                            <th>Nama Arsip</th>
-                                            <th>Sifat Arsip</th>
-                                            <th>Deskripi</th>
-                                            <th style="width: 10px; text-align: center"><i class='anticon anticon-setting'></i></th>
+                                            <th>Judul</th>
+                                            <th>No Surat Lengkap</th>
+                                            <th>Rak Arsip</th>
+                                            <th>Unit Arsip</th>
                                         </thead>
                                         <tbody>
-                                            <td>Lorem ipsum dolor sit amet</td>
-                                            <td>Lorem ipsum dolor sit amet</td>
-                                            <td>Lorem ipsum dolor sit amet</td>
-                                            <td>Lorem ipsum dolor sit amet</td>
-                                            <td class="text-center d-inline-flex">
-                                                <a href="#" class="badge badge-success mx-1"data-toggle="tooltip" title= "View"><i class='anticon anticon-select'></i></a>
-                                                <a href="#" class="badge badge-primary mx-1" data-toggle="tooltip" title= "Edit"><i class="anticon anticon-edit"></i></a>
-                                            </td>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>Lorem ipsum dolor sit amet</td>
+                                                <td>Lorem ipsum dolor sit amet</td>
+                                                <td>Lorem ipsum dolor sit amet</td>
+                                                <td>Lorem ipsum dolor sit amet</td>
+                                            </tr>
                                         </tbody>
                                     </table>
-                                    <div class="row">
-                                        <div class="col-md-6 align-self-center">
-                                            <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                                <ul class="pagination">
-                                                    <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                                                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                    <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+    <!-- End Content -->
 
     <script src="{{ url('assets/js/vendors.min.js') }}"></script>
     <script src="{{ url('assets/js/app.min.js') }}"></script>
-
-    @stack('js')
-    {{--  <script>
-        $(document).ready( function () {
-            $('#datatable').DataTable();
-        } );
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="{{ url('assets/vendors/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ url('assets/vendors/datatables/dataTables.bootstrap.min.js') }}"></script>  --}}
-
+    <script src="{{ url('assets/vendors/datatables/dataTables.bootstrap.min.js') }}"></script>
+    @stack('js')
+    @push('js')
+<script>
+    $(document).ready( function () {
+        $('#datatable').DataTable();
+    } );
+</script>
 </body>
-
 </html>
