@@ -96,14 +96,14 @@
                     <span class="title" >Role</span>
                 </a>
             </li>
-            <li class="nav-item dropdown">
+            {{-- <li class="nav-item dropdown">
                 <a href="{{ route('permission.index')}}">
                     <span class="icon-holder">
                         <i class="anticon anticon-security-scan"></i>
                     </span>
                     <span class="title" >Permission</span>
                 </a>
-            </li>
+            </li> --}}
             @endrole
             {{-- role yang bisa di akses semua user --}}
             <li class="nav-item dropdown">
