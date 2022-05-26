@@ -4,7 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+
     "content-hash": "8d6191f187203e7d9d65a2ef8d7c264f",
+
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -61,6 +63,51 @@
                 "source": "https://github.com/asm89/stack-cors/tree/v2.1.1"
             },
             "time": "2022-01-18T09:12:03+00:00"
+        },
+        {
+            "name": "barradev/multipleauth",
+            "version": "1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Barra-Dev-Studio/MultipleAuth.git",
+                "reference": "06fdcd79d63a912f2cdbaef5f47feb0ca27484a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Barra-Dev-Studio/MultipleAuth/zipball/06fdcd79d63a912f2cdbaef5f47feb0ca27484a3",
+                "reference": "06fdcd79d63a912f2cdbaef5f47feb0ca27484a3",
+                "shasum": ""
+            },
+            "type": "package",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BarraDev\\MultipleAuth\\MultipleAuthServiceProvider"
+                    ],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BarraDev\\MultipleAuth\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Khoerul Umam",
+                    "email": "id.khoerulumam@gmail.com"
+                }
+            ],
+            "description": "Modul multiple auth untuk modul Barra Dev Studio",
+            "support": {
+                "issues": "https://github.com/Barra-Dev-Studio/MultipleAuth/issues",
+                "source": "https://github.com/Barra-Dev-Studio/MultipleAuth/tree/1.2"
+            },
+            "time": "2021-02-26T03:49:47+00:00"
         },
         {
             "name": "brick/math",

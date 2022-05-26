@@ -49,7 +49,7 @@
                 </ul>
             </li> --}}
             {{-- Sidebar Role Dosen --}}
-            @role('dosen')
+            @hasanyrole('dosen|operator|admin')
             <li class="nav-item dropdown">
                 <a href="{{ route('data.index') }}">
                     <span class="icon-holder">
@@ -58,9 +58,9 @@
                     <span class="title" >Data Arsip</span>
                 </a>
             </li>
-            @endrole()
+            @endhasanyrole
             {{-- Sidebar Role Operator--}}
-            @role('operator')
+            @hasanyrole('operator|admin')
             <li class="nav-item dropdown">
                 <a href="{{ route('arsip.index')}}">
                     <span class="icon-holder">
@@ -77,7 +77,7 @@
                     <span class="title" >Kategori</span>
                 </a>
             </li>
-            @endrole()
+            @endhasanyrole
             {{-- sidebar role admin --}}
             @role('admin')
             <li class="nav-item dropdown">
@@ -104,7 +104,7 @@
                     <span class="title" >Permission</span>
                 </a>
             </li>
-            @endrole()
+            @endrole
             {{-- role yang bisa di akses semua user --}}
             <li class="nav-item dropdown">
                 <a href="{{ route('setting') }}">

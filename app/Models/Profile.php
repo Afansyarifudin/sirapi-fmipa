@@ -10,4 +10,5 @@ use Illuminate\Database\Eloquent\softDeletes;
 class Profile extends Model
 {
     use HasFactory, SoftDeletes;
+
 }
