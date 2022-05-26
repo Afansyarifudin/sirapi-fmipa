@@ -27,7 +27,7 @@
                 <!-- Links -->
                 <ul class="navbar-nav mr-auto smooth-scroll"></ul>
                 </ul>
-                <!-- Links -->x 
+                <!-- Links -->x
                 <ul class="navbar-nav nav-flex-icons">
                     <!-- Collapsible content -->
                     <div class="collapse navbar-collapse" id="basicExampleNav">
@@ -88,7 +88,7 @@
                             <div class="card-header">
                                 <h5 class="card-title">
                                     <a class="collapsed" data-toggle="collapse" href="#collapseTwoDefault">
-                                        Jurusan
+                                        Kategori
                                     </a>
                                 </h5>
                             </div>
@@ -118,20 +118,6 @@
                         </div>
                         <div class="col-md-12">
                             <div class="card">
-                                    <div class="row mx-2 mt-3">
-                                        <div class="col-md-4">
-                                            <div class="dropdown dropdown-animated scale-right">
-                                                <button type="button float-end" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                                    Kategori
-                                                </button>
-                                                <div class="dropdown-menu">
-                                                    <button class="dropdown-item" type="button">Action</button>
-                                                    <button class="dropdown-item" type="button">Another action</button>
-                                                    <button class="dropdown-item" type="button">Something else here</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 <div class="card-body mb-2">
                                     <table class="table" id="datatable">
                                         <thead>
@@ -140,6 +126,7 @@
                                             <th>No Surat Lengkap</th>
                                             <th>Rak Arsip</th>
                                             <th>Unit Arsip</th>
+                                            <th style="width: 10px; text-align: center"><i class='anticon anticon-setting'></i></th>
                                         </thead>
                                         <tbody>
                                             <tr>
@@ -149,6 +136,10 @@
                                                 <td>Lorem ipsum dolor sit amet</td>
                                                 <td>Lorem ipsum dolor sit amet</td>
                                             </tr>
+                                            <td class="text-center d-inline-flex">
+                                                <a href="#" class="badge badge-success mx-1"data-toggle="tooltip" title= "View"><i class='anticon anticon-select'></i></a>
+                                                <a href="#" class="badge badge-danger mx-1"data-toggle="tooltip" title= "Download"><i class="anticon anticon-download"></i></a>
+                                            </td>
                                         </tbody>
                                     </table>
                                 </div>
