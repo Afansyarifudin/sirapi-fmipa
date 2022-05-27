@@ -11,4 +11,25 @@ class Arsip extends Model
 {
     use HasFactory, SoftDeletes;
 
+    protected $table = 'arsips';
+
+    protected $fillable = [
+        'category_id',
+        'user_id',
+        'name',
+        'sifat',
+        'file',
+
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function category()
+    {
+        return $this->hasMany(Category::class);
+    }
+
 }
