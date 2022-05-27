@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ArsipGuestController extends Controller
 {
     public function index()
     {
-        return view('guest.arsip');
+        $arsip = DB::table('arsips')->where('sifat', 'public')->first();
+        return view('guest.arsip', compact('arsip'));
     }
 }
