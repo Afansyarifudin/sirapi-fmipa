@@ -27,7 +27,7 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Email</th>
-                        <th><i class='anticon anticon-setting'></i></th>
+                        <th style="text-align: center"><i class='anticon anticon-setting'></i></th>
                     </thead>
                     <tbody>
                         <td></td>

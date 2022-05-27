@@ -25,7 +25,7 @@
                         <th>Sifat Arsip</th>
                         <th>Deskripsi</th>
                         <th>Created by</th>
-                        <th style="width: 10px; text-align: center"><i class='anticon anticon-setting'></i></th>
+                        <th style=" text-align: center"><i class='anticon anticon-setting'></i></th>
                     </thead>
                     <tbody>
                         <td></td>
@@ -47,7 +47,20 @@
 @push('js')
 <script>
     $(document).ready( function () {
-        $('#datatable').DataTable();
+        $('#datatable').DataTable({
+            processing : true,
+            severSide : true,
+            ajax : {
+                url: "{{ route('category.index')}}",
+                type : 'GET'
+            },
+            columns: [
+                { data: 'id', name:'id'},
+                { data: 'name', name:'name'},
+                { data: 'action', name:'action'},
+            ],
+            order: [[0,'asc']]
+        });
     } );
 </script>
 <script src="{{ url('assets/vendors/datatables/jquery.dataTables.min.js') }}"></script>
