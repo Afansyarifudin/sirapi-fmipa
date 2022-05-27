@@ -47,7 +47,21 @@
 @push('js')
 <script>
     $(document).ready( function () {
-        $('#datatable').DataTable();
+        $('#datatable').DataTable({
+            processing : true,
+            severSide : true,
+            ajax : {
+                url: "{{ route('role.index')}}",
+                type : 'GET'
+            },
+            columns: [
+                { data: 'id', name:'id'},
+                { data: 'name', name:'name'},
+                { data: 'guard_name', name:'guard_name'},
+                { data: 'action', name:'action'},
+            ],
+            order: [[0,'asc']]
+        });
     } );
 </script>
 <script src="{{ url('assets/vendors/datatables/jquery.dataTables.min.js') }}"></script>
