@@ -72,15 +72,14 @@
                         <div class="card">
                             <div class="card-header">
                                 <h5 class="card-title">
-                                    <a data-toggle="collapse" href="#collapseOneDefault">
-                                        Arsip Terbaru
+                                    <a class="collapsed" data-toggle="collapse" href="#collapseOneDefault">
+                                        Terbaru
                                     </a>
                                 </h5>
                             </div>
                             <div id="collapseOneDefault" class="collapse show" data-parent="#accordion-default">
                                 <div class="card-body">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
+                                    ...
                                 </div>
                             </div>
                         </div>
@@ -94,7 +93,9 @@
                             </div>
                             <div id="collapseTwoDefault" class="collapse" data-parent="#accordion-default">
                                 <div class="card-body">
-                                    ...
+                                    @foreach ($list_category as $item)
+                                        <a class="dropdown-item" href="#">{{ $item->name }}</a>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -122,8 +123,9 @@
                                     <table class="table" id="datatable">
                                         <thead>
                                             <th>No</th>
-                                            <th>nama</th>
-                                            <th style="text-align: center"><i class='anticon anticon-setting'></i></th>
+                                            <th>Nama</th>
+                                            <th>Deskripsi</th>
+                                            <th><i class='anticon anticon-setting'></i></th>
                                         </thead>
                                     </table>
                                 </div>
@@ -156,11 +158,12 @@
             columns: [
                 { data: 'id', name:'id'},
                 { data: 'name', name:'name'},
+                { data: 'deskripsi', name:'deskripsi'},
                 { data: 'action', name:'action'},
             ],
             order: [[0,'asc']]
+            });
         });
-         } );
     </script>
 
 </body>
