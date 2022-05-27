@@ -24,7 +24,7 @@
                                         <i class="anticon anticon-folder-open"></i>
                                     </div>
                                     <div class="m-l-15">
-                                        <h2 class="m-b-0">0000</h2>
+                                        <h2 class="m-b-0">{{ $count_arsip }}</h2>
                                         <p class="m-b-0 text-muted">Data Arsip</p>
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@
                                         <i class="anticon anticon-user"></i>
                                     </div>
                                     <div class="m-l-15">
-                                        <h2 class="m-b-0">1234</h2>
+                                        <h2 class="m-b-0">{{ $count_user }}</h2>
                                         <p class="m-b-0 text-muted">User</p>
                                     </div>
                                 </div>
@@ -58,7 +58,7 @@
                                         <i class="anticon anticon-tags"></i>
                                     </div>
                                     <div class="m-l-15">
-                                        <h2 class="m-b-0">12</h2>
+                                        <h2 class="m-b-0">{{ $count_category }}</h2>
                                         <p class="m-b-0 text-muted">Kategori</p>
                                     </div>
                                 </div>
@@ -73,7 +73,7 @@
                                         <i class="anticon anticon-usergroup-add"></i>
                                     </div>
                                     <div class="m-l-15">
-                                        <h2 class="m-b-0">iii</h2>
+                                        <h2 class="m-b-0">{{ $count_role }}</h2>
                                         <p class="m-b-0 text-muted">Role</p>
                                     </div>
                                 </div>
