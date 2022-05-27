@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
         Arsip::factory(100)->create();
 
 
-        $this->call(CategorySeeder::class);
-        $this->call(RoleSeeder::class);
-        $this->call(UserSeeder::class);
+        // $this->call(CategorySeeder::class);
+        // $this->call(RoleSeeder::class);
+        // $this->call(UserSeeder::class);
 
     }
 }
