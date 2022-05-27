@@ -72,7 +72,7 @@
             <li class="nav-item dropdown">
                 <a href="{{ route('category.index')}}">
                     <span class="icon-holder">
-                        <i class="anticon anticon-contacts"></i>
+                        <i class="anticon anticon-tags"></i>
                     </span>
                     <span class="title" >Kategori</span>
                 </a>
