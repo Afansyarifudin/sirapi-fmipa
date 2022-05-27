@@ -15,6 +15,12 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->string('username')->unique();
+            $table->bigInteger('NIP-NIM');
+            $table->string('alamat');
+            $table->string('prodi');
+            $table->string('jurusan');
             $table->softDeletes();
             $table->timestamps();
         });

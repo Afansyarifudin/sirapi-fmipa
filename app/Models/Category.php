@@ -13,6 +13,18 @@ class Category extends Model
 
     protected $table = 'categories';
 
+    protected $guarded = ['id'];
+
+    protected $fillable = [
+        'name',
+        'slug',
+    ];
+
+    public function arsip()
+    {
+        return $this->belongsTo(Arsip::class);
+    }
+
 
 
 
