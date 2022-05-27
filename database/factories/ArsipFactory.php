@@ -18,6 +18,8 @@ class ArsipFactory extends Factory
             'user_id' => 2,
             'name'=> $this->faker->sentence(3),
             'sifat'=> 'private',
+            'deskripsi'=> $this->faker->sentence(3),
+            'sifat'=> 'public',
             'file' => 'jpg',
         ];
     }
