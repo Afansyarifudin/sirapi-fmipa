@@ -26,9 +26,9 @@
                     <thead>
                         <th>No</th>
                         <th>Nama</th>
-                        <th><i class='anticon anticon-setting'></i></th>
+                        <th style="text-align: center"><i class='anticon anticon-setting'></i></th>
                     </thead>
-                    
+
                 </table>
             </div>
         </div>

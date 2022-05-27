@@ -27,17 +27,9 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Guard Name</th>
-                        <th style="width: 10px; text-align: center"><i class='anticon anticon-setting'></i></th>
+                        <th style="text-align: center"><i class='anticon anticon-setting'></i></th>
                     </thead>
-                    <tbody>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="text-center d-inline-flex">
-                            <a href="#" class="badge badge-primary mx-1" data-toggle="tooltip" title= "Edit"><i class='fas fa-user-edit'></i></a>
-                            <a href="#" class="badge badge-danger mx-1"data-toggle="tooltip" title= "Delete"><i class='far fa-trash-alt'></i></a>
-                        </td>
-                    </tbody>
+
                 </table>
             </div>
         </div>
@@ -47,7 +39,7 @@
 @push('js')
 <script>
     $(document).ready( function () {
-        $('#datatable').DataTable({
+       $('#datatable').DataTable({
             processing : true,
             severSide : true,
             ajax : {

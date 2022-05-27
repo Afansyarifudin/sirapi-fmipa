@@ -26,22 +26,10 @@
                         <th>No</th>
                         <th>Nama Arsip</th>
                         <th>Sifat Arsip</th>
-                        <th>Deskripsi</th>
                         <th>File Arsip</th>
-                        <th style="width: 10px; text-align: center"><i class='anticon anticon-setting'></i></th>
+                        <th style="text-align: center"><i class='anticon anticon-setting'></i></th>
                     </thead>
-                    <tbody>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="text-center d-inline-flex">
-                            <a href="#" class="badge badge-success mx-1"data-toggle="tooltip" title= "View"><i class='anticon anticon-select'></i></a>
-                            <a href="#" class="badge badge-primary mx-1" data-toggle="tooltip" title= "Edit"><i class="anticon anticon-edit"></i></a>
-                            <a href="#" class="badge badge-danger mx-1"data-toggle="tooltip" title= "Delete"><i class='far fa-trash-alt'></i></a>
-                        </td>
-                    </tbody>
+
                 </table>
             </div>
         </div>
@@ -51,7 +39,24 @@
 @push('js')
 <script>
     $(document).ready( function () {
-        $('#datatable').DataTable();
+        $('#datatable').DataTable({
+            processing : true,
+            severSide : true,
+            ajax : {
+                url: "{{ route('data.index')}}",
+                type : 'GET'
+            },
+            columns: [
+                { data: 'id', name:'id'},
+                { data: 'name', name:'name'},
+                { data: 'sifat', name:'sifat'},
+                { data: 'file', name:'file'},
+                { data: 'action', name:'action'},
+
+
+            ],
+            order: [[0,'asc']]
+        });
     } );
 </script>
 <script src="{{ url('assets/vendors/datatables/jquery.dataTables.min.js') }}"></script>
