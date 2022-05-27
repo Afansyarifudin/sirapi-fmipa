@@ -27,7 +27,7 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Email</th>
-                        <th style="width: 10px; text-align: center"><i class='anticon anticon-setting'></i></th>
+                        <th><i class='anticon anticon-setting'></i></th>
                     </thead>
                     <tbody>
                         <td></td>
@@ -47,7 +47,21 @@
 @push('js')
 <script>
     $(document).ready( function () {
-        $('#datatable').DataTable();
+        $('#datatable').DataTable({
+            processing : true,
+            severSide : true,
+            ajax : {
+                url: "{{ route('user.index')}}",
+                type : 'GET'
+            },
+            columns: [
+                { data: 'id', name:'id'},
+                { data: 'name', name:'name'},
+                { data: 'email', name:'email'},
+                { data: 'action', name:'action'},
+            ],
+            order: [[0,'asc']]
+        });
     } );
 </script>
 <script src="{{ url('assets/vendors/datatables/jquery.dataTables.min.js') }}"></script>

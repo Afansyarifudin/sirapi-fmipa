@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
@@ -11,8 +13,24 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $role_list = Role::all();
+
+        if($request->ajax()){
+            return datatables() -> of($role_list)
+            ->addColumn('action', function($data){
+
+
+                $button = '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="badge badge-primary mx-1"><i class="fas fa-user-edit"></i></a>';
+                $button .= '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="badge badge-danger mx-1"><i class="far fa-trash-alt"></i></a>';
+                return $button;
+            })
+            ->rawColumns(['action'])
+            ->addIndexColumn()
+
+            -> make(true);
+        }
         return view('admin.role.index');
     }
 

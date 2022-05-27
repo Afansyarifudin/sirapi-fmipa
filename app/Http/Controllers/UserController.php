@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -11,10 +12,27 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $user_list = User::all();
+
+        if($request->ajax()){
+            return datatables() -> of($user_list)
+            ->addColumn('action', function($data){
+                
+
+                $button = '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="badge badge-primary mx-1"><i class="fas fa-user-edit"></i></a>';
+                $button .= '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="badge badge-danger mx-1"><i class="far fa-trash-alt"></i></a>';
+                return $button;
+            })
+            ->rawColumns(['action'])
+            ->addIndexColumn()
+            
+            -> make(true);
+        }
         return view('admin.user.index');
     }
+    
 
     /**
      * Show the form for creating a new resource.
