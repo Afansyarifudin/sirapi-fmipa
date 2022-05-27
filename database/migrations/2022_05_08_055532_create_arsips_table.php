@@ -18,6 +18,7 @@ class CreateArsipsTable extends Migration
             $table->foreignId('category_id');
             $table->foreignId('user_id');
             $table->string('name');
+            $table->string('deskripsi');
             $table->string('sifat');
             $table->string('file');
             $table->softDeletes();

@@ -17,6 +17,7 @@ class Arsip extends Model
         'category_id',
         'user_id',
         'name',
+        'deskripsi',
         'sifat',
         'file',
 
