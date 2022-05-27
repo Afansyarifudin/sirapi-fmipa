@@ -12,7 +12,7 @@
                         <h4><b>Data Arsip</b></h4>
                     </div>
                     <div class="col-md-4">
-                        <a href="{{ route('data.create') }}" class="btn btn-primary float-right">Tambah Kategori</a>
+                        <a href="{{ route('data.create') }}" class="btn btn-primary float-right">Tambah Data Arsip</a>
                     </div>
                 </div>
             </div>
