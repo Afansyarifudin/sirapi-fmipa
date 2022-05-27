@@ -14,10 +14,10 @@ class ArsipFactory extends Factory
     public function definition()
     {
         return [
-            'category_id' => 1,
-            'user_id' => 1,
+            'category_id' => 2,
+            'user_id' => 2,
             'name'=> $this->faker->sentence(3),
-            'sifat'=> 'public',
+            'sifat'=> 'private',
             'file' => 'jpg',
         ];
     }

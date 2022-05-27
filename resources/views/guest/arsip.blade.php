@@ -122,25 +122,9 @@
                                     <table class="table" id="datatable">
                                         <thead>
                                             <th>No</th>
-                                            <th>Judul</th>
-                                            <th>No Surat Lengkap</th>
-                                            <th>Rak Arsip</th>
-                                            <th>Unit Arsip</th>
-                                            <th style="width: 10px; text-align: center"><i class='anticon anticon-setting'></i></th>
+                                            <th>nama</th>
+                                            <th style="text-align: center"><i class='anticon anticon-setting'></i></th>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
-                                                <td class="text-center d-inline-flex">
-                                                    <a href="#" class="badge badge-success mx-1"data-toggle="tooltip" title= "View"><i class='anticon anticon-select'></i></a>
-                                                    <a href="#" class="badge badge-warning mx-1"data-toggle="tooltip" title= "Download"><i class="anticon anticon-download"></i></a>
-                                                </td>
-                                            </tr>
-                                        </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -159,10 +143,25 @@
     <script src="{{ url('assets/vendors/datatables/dataTables.bootstrap.min.js') }}"></script>
     @stack('js')
     @push('js')
-<script>
-    $(document).ready( function () {
-        $('#datatable').DataTable();
-    } );
-</script>
+
+    <script>
+        $(document).ready( function () {
+            $('#datatable').DataTable({
+            processing : true,
+            severSide : true,
+            ajax : {
+                url: "{{ route('guest.guest_arsip') }}",
+                type : 'GET'
+            },
+            columns: [
+                { data: 'id', name:'id'},
+                { data: 'name', name:'name'},
+                { data: 'action', name:'action'},
+            ],
+            order: [[0,'asc']]
+        });
+         } );
+    </script>
+
 </body>
 </html>
