@@ -62,80 +62,84 @@
     <!-- End Navbar -->
 
     <!-- Content -->
-    <header class="masthead " >
-        <h1 class="mb-5">Arsip</h1>
-        <div class="d-flex align-items-center flex-column">
-            <div class="row">
-                <div class="col-lg-2 mb-3">
-                    <!-- Accordion -->
-                    <div class="accordion" id="accordion-default">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="card-title">
-                                    <a class="collapsed" data-toggle="collapse" href="#collapseOneDefault">
-                                        Terbaru
-                                    </a>
-                                </h5>
-                            </div>
-                            <div id="collapseOneDefault" class="collapse show" data-parent="#accordion-default">
-                                <div class="card-body">
-                                    ...
+    <div class="row">
+        <div class="col-md-12">
+            <header class="masthead">
+                <h1 class="mb-5">Arsip</h1>
+                <div class="d-flex align-items-center flex-column">
+                    <div class="row">
+                        <div class="col-lg-2 mb-3">
+                            <!-- Accordion -->
+                            <div class="accordion" id="accordion-default">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="card-title">
+                                            <a class="collapsed" data-toggle="collapse" href="#collapseOneDefault">
+                                                Terbaru
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseOneDefault" class="collapse show" data-parent="#accordion-default">
+                                        <div class="card-body">
+                                            ...
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="card-title">
+                                            <a class="collapsed" data-toggle="collapse" href="#collapseTwoDefault">
+                                                Kategori
+                                            </a>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwoDefault" class="collapse" data-parent="#accordion-default">
+                                        <div class="card-body">
+                                            @foreach ($list_category as $item)
+                                                <a class="dropdown-item" href="#">{{ $item->name }}</a>
+                                            @endforeach
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- End Accordion -->
                         </div>
-                        <div class="card">
-                            <div class="card-header">
-                                <h5 class="card-title">
-                                    <a class="collapsed" data-toggle="collapse" href="#collapseTwoDefault">
-                                        Kategori
-                                    </a>
-                                </h5>
-                            </div>
-                            <div id="collapseTwoDefault" class="collapse" data-parent="#accordion-default">
-                                <div class="card-body">
-                                    @foreach ($list_category as $item)
-                                        <a class="dropdown-item" href="#">{{ $item->name }}</a>
-                                    @endforeach
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Accordion -->
-                </div>
 
-                <div class="col-lg-10">
-                    <div class="container-fluid">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-8">
-                                            <h4><b>DATA ARSIP</b></h4>
-                                            <p>Di bawah ini merupakan list daftar arsip surat yang tersedia dalam sistem</p>
+                        <div class="col-lg-10">
+                            <div class="container-fluid">
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-8">
+                                                    <h4><b>DATA ARSIP</b></h4>
+                                                    <p>Di bawah ini merupakan list daftar arsip surat yang tersedia dalam sistem</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <div class="card-body mb-2">
+                                            <table class="table" id="datatable">
+                                                <thead>
+                                                    <th>No</th>
+                                                    <th>Nama</th>
+                                                    <th>Deskripsi</th>
+                                                    <th><i class='anticon anticon-setting'></i></th>
+                                                </thead>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-body mb-2">
-                                    <table class="table" id="datatable">
-                                        <thead>
-                                            <th>No</th>
-                                            <th>Nama</th>
-                                            <th>Deskripsi</th>
-                                            <th><i class='anticon anticon-setting'></i></th>
-                                        </thead>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-            </div>
+            </header>
         </div>
-    </header>
+    </div>
     <!-- End Content -->
 
     <script src="{{ url('assets/js/vendors.min.js') }}"></script>
