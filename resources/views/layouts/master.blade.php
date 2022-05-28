@@ -48,7 +48,7 @@
     <script src="{{ url('assets/js/function.js') }}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    {{-- @if(Session::get('success') || Session::get('error'))
+    @if(Session::get('success') || Session::get('error'))
     <script>
         $(document).ready(function() {
             @if(Session::get('success'))
@@ -61,7 +61,7 @@
             sweatAlert(icon, "{{ Session::get('success') ?? Session::get('error') }}", "{{ Auth()->user()->name }}");
         });
     </script>
-    @endif --}}
+    @endif
 
     @livewireScripts
 

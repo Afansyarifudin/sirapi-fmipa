@@ -19,7 +19,7 @@ class KategoriController extends Controller
         if($request->ajax()){
             return datatables() -> of($category_list)
             ->addColumn('action', function($data){
-                
+
 
                 $button = '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="badge badge-primary mx-1"><i class="fas fa-user-edit"></i></a>';
                 $button .= '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="badge badge-danger mx-1"><i class="far fa-trash-alt"></i></a>';
@@ -27,7 +27,7 @@ class KategoriController extends Controller
             })
             ->rawColumns(['action'])
             ->addIndexColumn()
-            
+
             -> make(true);
 
         }
@@ -53,7 +53,22 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd('success');
+
+        $validatedData = $request->validate([
+            'name' => 'required|unique:categories|max:50',
+            'slug' => 'required|unique:categories'
+        ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+        $category = Category::create($validatedData);
+
+        return ($category) ?
+            redirect()->route('category.index') ->with('success', 'Kategori berhasil ditambahkan') :
+            back()->with('error', 'Kategori gagal ditambahkan');
+
+
     }
 
     /**
