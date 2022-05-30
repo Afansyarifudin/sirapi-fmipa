@@ -52,7 +52,21 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd('success');
+
+        $validateData = $request->validate([
+            'name' => 'required|unique:roles',
+            'guard_name' => 'required',
+        ]);
+
+        // $validateData['user_id'] = auth()->user()->id;
+
+        $role = Role::create($validateData);
+
+        return ($role) ?
+            redirect()->route('role.index')->with('success', 'Role berhasil ditambahkan') :
+            back()->with('error', 'role gagal ditambahkan');
+
     }
 
     /**

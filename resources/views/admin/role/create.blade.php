@@ -16,19 +16,25 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form method="POST" action="">
+                <form method="POST" action="{{ route('role.store') }}">
+                    @csrf
                     <div class="form">
                         <div class="form-group">
                             <label for="name">Nama</label>
-                            <input type="text" class="form-control" id="name" placeholder="Nama">
+                            <input type="text" class="form-control @error('name') is-invailid @enderror" id="name" name="name" required autofocus value="{{ old('name') }}" placeholder="Nama">
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="guard_name">Guard Name</label>
-                        <select class="custom-select">
-                            <option value="1">Web</option>
-                            <option value="2">API</option>
-                        </select>
+                        <div class="form-group">
+                            <label for="guard_name">Guard Name</label>
+                            <select class="custom-select" id="guard_name" name="guard_name" required>
+                                <option value="web">Web</option>
+                                <option value="api">Api</option>
+                            </select>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary float-right">Simpan</button>
                 </form>
