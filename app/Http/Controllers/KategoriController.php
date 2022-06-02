@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KategoriController extends Controller
 {
@@ -21,9 +22,20 @@ class KategoriController extends Controller
             ->addColumn('action', function($data){
 
 
-                $button = '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="badge badge-primary mx-1"><i class="fas fa-user-edit"></i></a>';
-                $button .= '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="badge badge-danger mx-1"><i class="far fa-trash-alt"></i></a>';
-                return $button;
+                // $button = '<a href="'. route('category.edit', $data->id) .'" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="badge badge-primary mx-1"><i class="fas fa-user-edit"></i></a>';
+                // $button .= '<a href="#" data-toggle="tooltip" data-form="#categoryDeleteButton$data->id" data-id="'.$data->id.'" data-original-title="Delete" class="badge badge-danger mx-1"><i class="far fa-trash-alt"></i></a>';
+                // return $button;
+
+                return "<div class='btn-group'>
+                    <a class='btn btn-warning btn-sm' href='" . route('category.edit', $data->id) . "'>
+                        <i class='anticon anticon-edit'></i>
+                    </a>
+                    <button class='btn btn-danger btn-sm deleteButton' data-form='#categoryDeleteButton$data->id'>
+                        <i class='anticon anticon-delete'></i>
+                    </button>
+                    <form id='categoryDeleteButton$data->id' action='" . route('category.destroy', $data->id) . "' method='POST'>" . csrf_field() . " " . method_field('DELETE') . "
+                    </form>
+                </div>";
             })
             ->rawColumns(['action'])
             ->addIndexColumn()
@@ -90,7 +102,9 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Category::where('id', $id)->first();
+
+        return view('operator.category.edit', compact('data'));
     }
 
     /**
@@ -102,7 +116,16 @@ class KategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|unique:categories|max:50',
+            'slug' => 'required|unique:categories'
+        ]);
+
+        $update = Category::where('id', $id)->update($validatedData);
+
+        return ($update) ?
+        redirect() -> route('category.index')->with('success', 'kategori berhasil disunting') :
+        back() -> with('error', 'kategori gagal disunting');
     }
 
     /**
@@ -113,6 +136,19 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        try {
+            DB::beginTransaction();
+            $delete = Category::where('id', $id)->delete();
+            DB::commit();
+            return ($delete) ?
+            redirect()->route('category.index')->with('success', 'kategori berhasil dihapus') :
+            back()->with('error', 'kategori gagal dihapus');
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->with('error', 'terjadi kesalahan, kategori gagal dihapus');
+
+        }
     }
 }

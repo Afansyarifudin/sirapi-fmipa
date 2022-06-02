@@ -16,14 +16,31 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form method="POST" action="">
+                <form method="POST" action="{{ route('category.update', $data->id) }}" method="POST">
+                    @csrf
+                    @method('PUT')
                     <div class="form">
                         <div class="form-group">
                             <label for="name">Nama</label>
-                            <input type="text" class="form-control" id="name" placeholder="Nama">
+                            <input type="hidden" name="id" id="id" value="{{ $data->id }}">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" required autofocus value="{{ $data->name }}" placeholder="Nama">
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="slug">Slug</label>
+                            <input type="text" class="form-control @error('slug') is-invalid @enderror " id="slug" name="slug" required value="{{ $data->slug }}" placeholder="Slug">
+                            @error('slug')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary float-right">Simpan</button>
+                    <button type="submit" class="btn btn-primary float-right">Edit Kategori</button>
                 </form>
             </div>
         </div>
