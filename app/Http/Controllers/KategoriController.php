@@ -27,11 +27,9 @@ class KategoriController extends Controller
                 // return $button;
 
                 return "<div class='btn-group'>
-                    <a class='btn btn-warning btn-sm' href='" . route('category.edit', $data->id) . "'>
-                        <i class='anticon anticon-edit'></i>
-                    </a>
+                    <a href='". route('category.edit', $data->id) ."' data-toggle='tooltip'  data-id='".$data->id."' data-original-title='Edit' class='badge badge-primary mx-1'><i class='fas fa-user-edit'></i></a>
                     <button class='btn btn-danger btn-sm deleteButton' data-form='#categoryDeleteButton$data->id'>
-                        <i class='anticon anticon-delete'></i>
+                    <i class='far fa-trash-alt'></i>
                     </button>
                     <form id='categoryDeleteButton$data->id' action='" . route('category.destroy', $data->id) . "' method='POST'>" . csrf_field() . " " . method_field('DELETE') . "
                     </form>
