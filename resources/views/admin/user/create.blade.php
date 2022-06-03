@@ -16,23 +16,31 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form method="POST" action="">
-                    <div class="form">
-                        <div class="form-group">
-                            <label for="name">Nama</label>
-                            <input type="text" class="form-control" id="name" placeholder="nama">
+                <form>
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <label for="Name">Nama</label>
+                            <input type="text" class="form-control" id="Name" placeholder="Nama">
                         </div>
                     </div>
-                    <div class="form">
-                        <div class="form-group">
+                    <div class="form-row mb-3">
+                        <div class="col">
                             <label for="inputEmail">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email">
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                        </div>
+                        <div class="col">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="password">
                         </div>
                     </div>
-                    <div class="form">
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="text" class="form-control" id="password" placeholder="password">
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <label for="role">Roles</label>
+                                <select class="custom-select">
+                                    <option value="1">Admin</option>
+                                    <option value="2">Opertor</option>
+                                    <option value="2">Dosen</option>
+                                </select>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary float-right">Simpan</button>
