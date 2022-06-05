@@ -24,9 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $count_user = DB::table('users')->count();
-        $count_arsip = DB::table('arsips')->count();
-        $count_category = DB::table('categories')->count();
+        $count_user = DB::table('users')->where('deleted_at', NULL)->count();
+        $count_arsip = DB::table('arsips')->where('deleted_at', NULL)->count();
+        $count_category = DB::table('categories')->where('deleted_at', NULL)->count();
         $count_role = DB::table('roles')->count();
 
         return view('home.index', compact([

@@ -18,7 +18,7 @@
                             <h5 class="m-b-5 font-size-18">Ganti Foto</h5>
                             <p class="opacity-07 font-size-13 m-b-0">
                                 Gambar Profile sebaiknya memiliki :<br>
-                                rasio 1:1 dan berukuran tidak lebih dari 2MB 
+                                rasio 1:1 dan berukuran tidak lebih dari 2MB
                             </p>
                         </div>
                         <div>
@@ -64,7 +64,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                <label class="font-weight-semibold" for="NIP">NIP</label>
-                               <input type="number" class="form-control" id="NIP" placeholder="NIP" >
+                               <input type="number" class="form-control" min="0" id="NIP" placeholder="NIP" >
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="font-weight-semibold" for="alamat">Alamat</label>
@@ -74,7 +74,7 @@
                        <a href="#" class="btn btn-primary float-right">Simpan</a>
                     </form>
                 </div>
-            </div>  
+            </div>
         </div>
     </div>
 

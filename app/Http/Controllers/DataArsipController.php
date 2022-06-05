@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Arsip;
+use App\Models\Category;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DataArsipController extends Controller
 {
@@ -14,7 +16,7 @@ class DataArsipController extends Controller
      */
     public function index(Request $request)
     {
-        $list_arsips = Arsip::all();
+        $list_arsips = DB::table('arsips')->get();
 
         if ($request->ajax()){
             return datatables()-> of ($list_arsips)
@@ -41,7 +43,9 @@ class DataArsipController extends Controller
      */
     public function create()
     {
-        return view('dosen.data.create');
+        return view('dosen.data.create', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -52,7 +56,21 @@ class DataArsipController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validateData = $request->validate([
+            'category_id' => 'required',
+            'name'=> 'required|max:255',
+            'deskripsi'=>'required',
+            'sifat'=> 'required',
+            'file'=> 'required',
+        ]);
+
+        $validateData['user_id'] = auth()->user()->id;
+
+        $data = Arsip::create($validateData);
+
+        return ($data) ?
+        redirect()->route('arsip.index')->with('success', 'arsip berhasil ditambahkan') :
+        back()->with('error', 'arsip gagal ditambahkan');
     }
 
     /**
