@@ -26,6 +26,7 @@
                     <thead>
                         <th>No</th>
                         <th>Nama</th>
+                        <th>Slug</th>
                         <th style="text-align: center"><i class='anticon anticon-setting'></i></th>
                     </thead>
 
@@ -48,6 +49,7 @@
             columns: [
                 { data: 'id', name:'id'},
                 { data: 'name', name:'name'},
+                { data: 'slug', name:'slug'},
                 { data: 'action', name:'action'},
             ],
             order: [[0,'asc']]
