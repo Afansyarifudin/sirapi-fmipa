@@ -25,22 +25,21 @@
 
             @else
                 <li>
-                    <h6 class="mt-2 mx-3 font-weight-semibold"> 
+                    <h6 class="mt-2 mx-3 font-weight-semibold">
                         {{ Auth::user()->name }}
                     </h6>
                 </li>
                 <li class="dropdown dropdown-animated scale-left">
                     <div class="pointer" data-toggle="dropdown">
                         <div class="avatar avatar-icon  m-h-10 m-r-15">
-                            <i class="anticon anticon-user"></i>
-
+                            <img alt="" src="{{ url('assets/images/avatar.png ') }}">
                         </div>
                     </div>
                     <div class="p-b-15 p-t-20 dropdown-menu pop-profile">
                         <div class="p-h-20 p-b-15 m-b-10 border-bottom">
                             <div class="d-flex m-r-50">
                                 <div class="avatar avatar-lg avatar-image">
-                                    <img src="" alt="">
+                                    <img alt="" src="{{ url('assets/images/avatar.png ') }}">
                                 </div>
                                 <div class="m-l-10">
                                     <h5 class="m-b-2 text-dark font-weight-semibold">

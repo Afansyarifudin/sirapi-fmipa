@@ -66,9 +66,9 @@
         <div class="col-md-12">
             <header class="masthead">
                 <h1 class="mb-5">Arsip</h1>
-                <div class="d-flex align-items-center flex-column">
+                <div class="d-flex flex-column">
                     <div class="row">
-                        <div class="col-lg-2 mb-3">
+                        <div class="col-lg-2 mb-3 mx-3">
                             <!-- Accordion -->
                             <div class="accordion" id="accordion-default">
                                 <div class="card">
@@ -105,7 +105,7 @@
                             <!-- End Accordion -->
                         </div>
 
-                        <div class="col-lg-10">
+                        <div class="col-lg-9">
                             <div class="container-fluid">
                                 <div class="col-md-12">
                                     <div class="card">
@@ -126,7 +126,6 @@
                                                 <thead>
                                                     <th>No</th>
                                                     <th>Nama</th>
-                                                    <th>Deskripsi</th>
                                                     <th><i class='anticon anticon-setting'></i></th>
                                                 </thead>
                                             </table>
@@ -162,7 +161,6 @@
             columns: [
                 { data: 'id', name:'id'},
                 { data: 'name', name:'name'},
-                { data: 'deskripsi', name:'deskripsi'},
                 { data: 'action', name:'action'},
             ],
             order: [[0,'asc']]
