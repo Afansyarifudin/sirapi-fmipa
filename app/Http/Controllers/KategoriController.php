@@ -26,7 +26,7 @@ class KategoriController extends Controller
                 // $button .= '<a href="#" data-toggle="tooltip" data-form="#categoryDeleteButton$data->id" data-id="'.$data->id.'" data-original-title="Delete" class="badge badge-danger mx-1"><i class="far fa-trash-alt"></i></a>';
                 // return $button;
 
-                return "<div class='btn-group'>
+                return "<div>
                     <a href='". route('category.edit', $data->id) ."' data-toggle='tooltip'  data-id='".$data->id."' data-original-title='Edit' class='badge badge-primary mx-1'><i class='fas fa-user-edit'></i></a>
                     <button class='btn btn-danger btn-sm deleteButton' data-form='#categoryDeleteButton$data->id'>
                     <i class='far fa-trash-alt'></i>

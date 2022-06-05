@@ -26,7 +26,7 @@
                         <th>No</th>
                         <th>Nama Arsip</th>
                         <th>Sifat Arsip</th>
-                        <th>File Arsip</th>
+                        <th>Ketegori</th>
                         <th style="text-align: center"><i class='anticon anticon-setting'></i></th>
                     </thead>
 
@@ -50,10 +50,8 @@
                 { data: 'id', name:'id'},
                 { data: 'name', name:'name'},
                 { data: 'sifat', name:'sifat'},
-                { data: 'file', name:'file'},
+                { data: 'category_id', name:'category'},
                 { data: 'action', name:'action'},
-
-
             ],
             order: [[0,'asc']]
         });

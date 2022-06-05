@@ -16,25 +16,35 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form>
+                <form action="" method="">
+                    @csrf
                     <div class="form-row mb-3">
-                        <div class="col">
-                            <label for="NamaArsip">Nama Arsip</label>
-                            <input type="text" class="form-control" id="NamaArsip" placeholder="Nama Arsip">
+                        <div class="col-8">
+                            <label for="name">Nama Arsip</label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Nama Arsip">
                         </div>
                         <div class="col">
-                            <label for="SifatSurat">Sifat Surat</label>
-                            <select class="custom-select">
-                                <option value="1">Private</option>
-                                <option value="2">Publik</option>
-
+                            <label for="sifat">Sifat Surat</label>
+                            <select class="custom-select" name="sifat">
+                                <option value="private">Private</option>
+                                <option value="public">Public</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-row mb-3">
                         <div class="col">
-                            <label for="Deskripsi">Deskripsi</label>
-                            <input type="text" class="form-control" id="Deskripsi" placeholder=" ">
+                            <label for="category">Kategori</label>
+                            <select class="custom-select" name="category_id">
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <label for="deskripsi">Deskripsi</label>
+                            <input type="text" class="form-control" name="deskripsi" id="deskripsi" placeholder="Deskripsi">
                         </div>
                     </div>
                     <div class="form-row mb-3">

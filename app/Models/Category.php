@@ -22,7 +22,7 @@ class Category extends Model
 
     public function arsip()
     {
-        return $this->belongsTo(Arsip::class);
+        return $this->hasMany(Arsip::class);
     }
 
 
