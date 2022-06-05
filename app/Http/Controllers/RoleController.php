@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\DB;
 
 class RoleController extends Controller
 {
@@ -22,9 +23,14 @@ class RoleController extends Controller
             ->addColumn('action', function($data){
 
 
-                $button = '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="badge badge-primary mx-1"><i class="fas fa-user-edit"></i></a>';
-                $button .= '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="badge badge-danger mx-1"><i class="far fa-trash-alt"></i></a>';
-                return $button;
+                return "<div style='text-align: center'>
+                    <a href='". route('role.edit', $data->id) ."' data-toggle='tooltip'  data-id='".$data->id."' data-original-title='Edit' class='badge badge-primary mx-1'><i class='fas fa-user-edit'></i></a>
+                    <a href=' ' class='badge badge-danger mx-1 deleteButton' data-form='#roleDeleteButton$data->id'>
+                    <i class='far fa-trash-alt'></i>
+                    </a>
+                    <form id='roleDeleteButton$data->id' action='" . route('role.destroy', $data->id) . "' method='POST'>" . csrf_field() . " " . method_field('DELETE') . "
+                    </form>
+                </div>";
             })
             ->rawColumns(['action'])
             ->addIndexColumn()
@@ -88,7 +94,9 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Role::where('id', $id)->first();
+
+        return view('admin.role.edit', compact('data'));
     }
 
     /**
@@ -100,7 +108,16 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'guard_name' => 'required'
+        ]);
+
+        $update = Role::where('id', $id)->update($validatedData);
+
+        return ($update) ?
+        redirect() -> route('role.index')->with('success', 'kategori berhasil disunting') :
+        back() -> with('error', 'kategori gagal disunting');
     }
 
     /**
@@ -111,6 +128,18 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            DB::beginTransaction();
+            $delete = Role::where('id', $id)->delete();
+            DB::commit();
+            return ($delete) ?
+            redirect()->route('role.index')->with('success', 'role berhasil dihapus') :
+            back()->with('error', 'role gagal dihapus');
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->with('error', 'terjadi kesalahan, kategori gagal dihapus');
+
+        }
     }
 }
