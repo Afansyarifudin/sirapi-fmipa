@@ -16,7 +16,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form action="" method="">
+                <form method="POST" action=" {{ route('data.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-row mb-3">
                         <div class="col-8">
@@ -58,7 +58,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-primary float-right">Simpan</a>
+                    <button type="submit" class="btn btn-primary float-right">Simpan</button>
                 </form>
             </div>
         </div>
