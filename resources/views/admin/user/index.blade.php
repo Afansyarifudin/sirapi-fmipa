@@ -13,7 +13,7 @@
                         <p>Di bawah ini merupakan list daftar user yang terdia dalam sistem</p>
                     </div>
                     <div class="col-md-4">
-                        <a href="{{ route('user.create') }}" class="btn btn-primary float-right">Tambah User</a>
+                        <a href="{{ route('register') }}" class="btn btn-primary float-right">Tambah User</a>
                     </div>
                 </div>
             </div>

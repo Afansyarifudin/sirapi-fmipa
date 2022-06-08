@@ -71,7 +71,7 @@
                         <div class="col-lg-2 mb-3 mx-3">
                             <!-- Accordion -->
                             <div class="accordion" id="accordion-default">
-                                <div class="card">
+                                {{-- <div class="card">
                                     <div class="card-header">
                                         <h5 class="card-title">
                                             <a class="collapsed" data-toggle="collapse" href="#collapseOneDefault">
@@ -84,7 +84,7 @@
                                             ...
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="card">
                                     <div class="card-header">
                                         <h5 class="card-title">

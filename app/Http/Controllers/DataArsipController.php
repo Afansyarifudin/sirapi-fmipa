@@ -18,6 +18,7 @@ class DataArsipController extends Controller
     {
         $list_arsips = DB::table('arsips')->get();
 
+
         if ($request->ajax()){
             return datatables()-> of ($list_arsips)
             ->addColumn('action', function($data){
@@ -33,7 +34,7 @@ class DataArsipController extends Controller
             -> make(true);
         }
 
-        return view('dosen.data.index');
+        return view('dosen.data.index', compact('list_arsips'));
     }
 
     /**

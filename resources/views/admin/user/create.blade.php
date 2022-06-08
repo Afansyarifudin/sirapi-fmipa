@@ -16,7 +16,9 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form>
+                <form action="" method="{{ route('register') }}">
+                    @csrf
+
                     <div class="form-row mb-3">
                         <div class="col">
                             <label for="Name">Nama</label>
@@ -28,12 +30,20 @@
                             <label for="inputEmail">Email</label>
                             <input type="email" class="form-control" id="inputEmail" placeholder="Email">
                         </div>
+                    </div>
+                    <div class="form-row mb-3">
                         <div class="col">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" placeholder="password">
                         </div>
                     </div>
                     <div class="form-row mb-3">
+                        <div class="col">
+                            <label for="password">Confirm Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="confirm password">
+                        </div>
+                    </div>
+                    {{-- <div class="form-row mb-3">
                         <div class="col">
                             <label for="role">Roles</label>
                                 <select class="custom-select">
@@ -42,7 +52,7 @@
                                     <option value="2">Dosen</option>
                                 </select>
                         </div>
-                    </div>
+                    </div> --}}
                     <button type="submit" class="btn btn-primary float-right">Simpan</button>
                 </form>
             </div>

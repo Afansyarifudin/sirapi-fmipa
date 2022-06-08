@@ -64,10 +64,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        return $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        return ($user) ?
+            redirect()->route('user.index')->with('success', 'User berhasil ditambahkan') :
+            back()->with('error', 'user gagal ditambahkan');
+
+
     }
 }
