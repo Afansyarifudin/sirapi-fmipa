@@ -9,71 +9,80 @@
                 <div class="card-header">
                     <h4 class="card-title">Pengaturan Pengguna</h4>
                 </div>
-                <div class="card-body">
-                    <div class="media align-items-center">
-                        <div class="avatar avatar-image  m-h-10 m-r-15" style="height: 80px; width: 80px">
-                            <img src="assets/images/avatars/thumb-3.jpg" alt="">
-                        </div>
-                        <div class="m-l-20 m-r-20">
-                            <h5 class="m-b-5 font-size-18">Ganti Foto</h5>
-                            <p class="opacity-07 font-size-13 m-b-0">
-                                Gambar Profile sebaiknya memiliki :<br>
-                                rasio 1:1 dan berukuran tidak lebih dari 2MB
-                            </p>
-                        </div>
-                        <div>
-                            <button class="btn btn-tone btn-primary">Upload</button>
-                        </div>
+                    <div class="card-body">
+                        <form action="">
+                            <div class="media align-items-center">
+                                <div class="avatar avatar-image  m-h-10 m-r-15" st  yle="height: 80px; width: 80px">
+                                    <img src="{{ Auth::user()->avatar }}" alt="">
+                                </div>
+                                <div class="m-l-20 m-r-20">
+                                    <h5 class="m-b-5 font-size-18">Update profile</h5>
+                                    <p class="opacity-07 font-size-13 m-b-0">
+                                        Gambar Profile sebaiknya memiliki :<br>
+                                        rasio 1:1 dan berukuran tidak lebih dari 2MB
+                                    </p>
+                                </div>
+                                <div>
+                                    <button class="btn btn-tone btn-primary">Upload</button>
+                                </div>
+                            </div>
+                        </form>
+                        <form method="POST" action="">
+                            @csrf
+                        <hr class="m-v-25">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-semibold" for="NamaLengkap">Nama:</label>
+                                    <input type="text" class="form-control" id="NamaLengkap" placeholder="Nama Lengkap" value="{{ Auth::user()->name }}">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-semibold" for="Email">Email:</label>
+                                    <input type="email" class="form-control" id="Email" placeholder="Email" value="{{ Auth::user()->email }}">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-semibold" for="Jurusan">Jurusan</label>
+                                    <select id="Jurusan" class="form-control">
+                                        <option>Jurusan Ilmu Komputer</option>
+                                        <option>Jurusan Biologi</option>
+                                        <option>Jurusan Fisika</option>
+                                        <option>Jurusan IPA Terpadu</option>
+                                        <option>Jurusan Kimia</option>
+                                        <option>Jurusan Matematika</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-semibold" for="Prodi">Prodi</label>
+                                    <select id="Prodi" class="form-control">
+                                        <option>Sistem Informasi</option>
+                                        <option>Teknik Informatika</option>
+                                        <option>Pendidikan Matematika</option>
+                                        <option>Pendidikan Fisika</option>
+                                        <option>Pendidikan Biologi</option>
+                                        <option>Ilmu Lingkungan</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-semibold" for="NIP">NIP</label>
+                                    <input type="number" class="form-control" min="0" id="NIP" placeholder="NIP" >
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="font-weight-semibold" for="alamat">Alamat</label>
+                                    <input type="text" class="form-control" id="alamat" placeholder="Alamat" >
+                                </div>
+                            </div>
+                            <div class="form-row ">
+                                <div class="form-group col-md-6 ">
+                                </div>
+                                <div class="form-group col-md-6 ">
+                                    <button type="submit" class="btn btn-primary float-right">Simpan</button>
+                                </div>
+                            </div>
                     </div>
-                    <hr class="m-v-25">
-                    <form>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label class="font-weight-semibold" for="NamaLengkap">Nama Lengkap:</label>
-                                <input type="text" class="form-control" id="NamaLengkap" placeholder="Nama Lengkap" value="{{ Auth::user()->name }}">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="font-weight-semibold" for="Email">Email:</label>
-                                <input type="email" class="form-control" id="Email" placeholder="Email" value="{{ Auth::user()->email }}">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label class="font-weight-semibold" for="Jurusan">Jurusan</label>
-                                <select id="Jurusan" class="form-control">
-                                    <option>Jurusan Ilmu Komputer</option>
-                                    <option>Jurusan Biologi</option>
-                                    <option>Jurusan Fisika</option>
-                                    <option>Jurusan IPA Terpadu</option>
-                                    <option>Jurusan Kimia</option>
-                                    <option>Jurusan Matematika</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="font-weight-semibold" for="Prodi">Prodi</label>
-                                <select id="Prodi" class="form-control">
-                                    <option>Sistem Informasi</option>
-                                    <option>Teknik Informatika</option>
-                                    <option>Pendidikan Matematika</option>
-                                    <option>Pendidikan Fisika</option>
-                                    <option>Pendidikan Biologi</option>
-                                    <option>Ilmu Lingkungan</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                               <label class="font-weight-semibold" for="NIP">NIP</label>
-                               <input type="number" class="form-control" min="0" id="NIP" placeholder="NIP" >
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="font-weight-semibold" for="alamat">Alamat</label>
-                                <input type="text" class="form-control" id="alamat" placeholder="Alamat" >
-                            </div>
-                       </div>
-                       <a href="#" class="btn btn-primary float-right">Simpan</a>
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
     </div>
