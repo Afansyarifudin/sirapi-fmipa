@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Arsip;
 use App\Models\Category;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -57,6 +58,7 @@ class DataArsipController extends Controller
      */
     public function store(Request $request)
     {
+        // dd('bisa');
         $validateData = $request->validate([
             'category_id' => 'required',
             'name'=> 'required|max:255',
@@ -65,11 +67,25 @@ class DataArsipController extends Controller
             'file'=> 'required',
         ]);
 
+        if (!$request->hasFile('file')){
+            return back()-> with('error', 'file wajib diisi');
+        }
+
+        $filetime = Carbon::now()->format('Y-m-d H:i:s');
+        $file_extension = $request->file('file')->getClientOriginalExtension();
+        $filename = md5($filetime) . '.' . $file_extension;
+        $request ->file->move(public_path('arsips/'), $filename);
+        $request->file = 'arsips/' . $filename;
+
         $validateData['user_id'] = auth()->user()->id;
 
         $data = Arsip::create($validateData);
 
-        return ($data) ?
+        $create = $data->store($request);
+
+
+
+        return ($create) ?
         redirect()->route('arsip.index')->with('success', 'arsip berhasil ditambahkan') :
         back()->with('error', 'arsip gagal ditambahkan');
     }
