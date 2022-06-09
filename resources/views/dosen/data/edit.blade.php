@@ -28,7 +28,7 @@
                                 <option value="1">Private</option>
                                 <option value="2">Publik</option>
 
-                              </select>
+                            </select>
                         </div>
                     </div>
                     <div class="form-row mb-3">

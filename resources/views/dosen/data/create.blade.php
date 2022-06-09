@@ -21,7 +21,14 @@
                     <div class="form-row mb-3">
                         <div class="col-8">
                             <label for="name">Nama Arsip</label>
-                            <input type="text" class="form-control" name="name" id="name" placeholder="Nama Arsip">
+                            <input type="text" class="form-control @error('name')
+                                is-invailid
+                            @enderror" name="name" id="name" placeholder="Nama Arsip" required autofocus value="{{ old('name') }}" >
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="col">
                             <label for="sifat">Sifat Surat</label>
@@ -44,7 +51,14 @@
                     <div class="form-row mb-3">
                         <div class="col">
                             <label for="deskripsi">Deskripsi</label>
-                            <input type="text" class="form-control" name="deskripsi" id="deskripsi" placeholder="Deskripsi">
+                            <input type="text" class="form-control @error('deskripsi')
+                                is-invailid
+                            @enderror" name="deskripsi" id="deskripsi" placeholder="Deskripsi" value="{{ old('deskripsi') }}">
+                            @error('deskripsi')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row mb-3">
@@ -52,13 +66,12 @@
                             <label for="Keterangan">Pilih File</label>
                             <div class="form-row">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">Pilih file</label>
+                                    <input type="file" class="form-control" id="file" name="file" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary float-right">Simpan</button>
+                    <button type="submit" class="btn btn-primary float-right">Tambah</button>
                 </form>
             </div>
         </div>

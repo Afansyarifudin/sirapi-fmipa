@@ -58,7 +58,13 @@ class DataArsipController extends Controller
      */
     public function store(Request $request)
     {
-        // dd('bisa');
+        // ddd($request);
+        // return $request->file('file')->store('arsips');
+
+        if (!$request->hasFile('file')){
+            return back()-> with('error', 'file wajib diisi');
+        }
+
         $validateData = $request->validate([
             'category_id' => 'required',
             'name'=> 'required|max:255',
@@ -67,26 +73,24 @@ class DataArsipController extends Controller
             'file'=> 'required',
         ]);
 
-        if (!$request->hasFile('file')){
-            return back()-> with('error', 'file wajib diisi');
-        }
+
 
         $filetime = Carbon::now()->format('Y-m-d H:i:s');
         $file_extension = $request->file('file')->getClientOriginalExtension();
         $filename = md5($filetime) . '.' . $file_extension;
-        $request ->file->move(public_path('arsips/'), $filename);
+        // $request ->file->move(public_path('arsips/'), $filename);
         $request->file = 'arsips/' . $filename;
 
         $validateData['user_id'] = auth()->user()->id;
 
-        $data = Arsip::create($validateData);
+        // $file = $request->file('file')->store($request);
+        $file = $request->file('file')->store('arsips');
 
-        $create = $data->store($request);
+        $store = Arsip::create($validateData);
 
 
-
-        return ($create) ?
-        redirect()->route('arsip.index')->with('success', 'arsip berhasil ditambahkan') :
+        return ($file) ?
+        redirect()->route('data.index')->with('success', 'arsip berhasil ditambahkan') :
         back()->with('error', 'arsip gagal ditambahkan');
     }
 
