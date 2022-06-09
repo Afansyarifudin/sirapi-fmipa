@@ -18,6 +18,7 @@ class Arsip extends Model
         'user_id',
         'name',
         'sifat',
+        'deskripsi',
         'file',
 
     ];
