@@ -23,7 +23,7 @@ class UserController extends Controller
 
                 $button = '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="badge badge-primary mx-1"><i class="fas fa-user-edit"></i></a>';
                 $button .= '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="badge badge-danger mx-1"><i class="far fa-trash-alt"></i></a>';
-                $button .= '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="badge badge-danger mx-1"><i class="far fa-trash-alt"></i></a>';
+                $button .= '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Role" class="badge badge-info mx-1"><i class="anticon anticon-usergroup-add"></i></a>';
                 return $button;
             })
             ->rawColumns(['action'])
