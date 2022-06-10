@@ -16,17 +16,25 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form>
+                <form method="POST" action="{{ route('data.update', $data->id) }}">
+                    @csrf
+                    @method('PUT')
                     <div class="form-row mb-3">
                         <div class="col">
                             <label for="NamaArsip">Nama Arsip</label>
-                            <input type="text" class="form-control" id="NamaArsip" placeholder="NamaArsip">
+                            <input type="hidden" name="id" id="id" value="{{ $data->id }}">
+                            <input type="text"  class="form-control @error('name') is-invalid @enderror" id="name" name="name" required autofocus value="{{ $data->name }}" placeholder="Nama">
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="col">
                             <label for="SifatSurat">Sifat Surat</label>
                             <select class="custom-select">
-                                <option value="1">Private</option>
-                                <option value="2">Publik</option>
+                                <option value="1" {{ $data->sifat == 1 ? 'selected' : '' }}>Private</option>
+                                <option value="2" {{ $data->sifat == 2 ? 'selected' : '' }}>Publik</option>
 
                             </select>
                         </div>
@@ -34,7 +42,13 @@
                     <div class="form-row mb-3">
                         <div class="col">
                             <label for="Deskripsi">Deskripsi</label>
-                            <input type="text" class="form-control" id="Deskripsi" placeholder=" ">
+                            {{-- <input type="text" class="form-control" id="Deskripsi" placeholder=" "> --}}
+                            <input type="text"  class="form-control @error('Deskripsi') is-invalid @enderror" id="Deskripsi" name="Deskripsi" required autofocus value="{{ $data->deskripsi }}" placeholder="Deskripsi">
+                            @error('Deskripsi')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="form-row mb-3">
@@ -42,13 +56,12 @@
                             <label for="Keterangan">Pilih File</label>
                             <div class="form-row">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">Pilih file</label>
+                                    <input type="file" class="form-control" id="file" name="file" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-primary float-right">Simpan</a>
+                    <button type="submit" class="btn btn-primary float-right">Simpan</button>
                 </form>
             </div>
         </div>

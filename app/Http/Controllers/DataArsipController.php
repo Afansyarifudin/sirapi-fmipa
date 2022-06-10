@@ -17,7 +17,7 @@ class DataArsipController extends Controller
      */
     public function index(Request $request)
     {
-        $list_arsips = DB::table('arsips')->get();
+        $list_arsips = Arsip::all();
 
 
         if ($request->ajax()){
@@ -25,10 +25,17 @@ class DataArsipController extends Controller
             ->addColumn('action', function($data){
 
 
-                $button = '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="View" class="badge badge-success mx-1"><i class="anticon anticon-select"></i></a>';
-                $button .= '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Edit" class="badge badge-primary mx-1"><i class= "anticon anticon-edit"></i></a>';
-                $button .= '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Delete" class="badge badge-danger mx-1"><i class="far fa-trash-alt"></i></a>';
-                return $button;
+
+                return "<div style='text-align: center'>
+
+                <a href='' data-toggle='tooltip'  data-id='".$data->id."' data-original-title='View' class='badge badge-success mx-1'><i class='anticon anticon-select'></i></a>
+                <a href='". route('data.edit', $data->id) ."' data-toggle='tooltip'  data-id='".$data->id."' data-original-title='Edit' class='badge badge-primary mx-1'><i class='fas fa-user-edit'></i></a>
+                <a href=' ' class='badge badge-danger mx-1 deleteButton' data-form='#dataDeleteButton$data->id'> <i class='far fa-trash-alt'></i> </a>
+
+                <form id='dataDeleteButton$data->id' action='" . route('data.destroy', $data->id) . "' method='POST'>" . csrf_field() . " " . method_field('DELETE') . "
+                </form>
+                </div>";
+
             })
             ->rawColumns(['action'])
             ->addIndexColumn()
@@ -113,7 +120,9 @@ class DataArsipController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Arsip::where('id', $id)->first();
+
+        return view('dosen.data.edit', compact('data'));
     }
 
     /**
@@ -125,8 +134,42 @@ class DataArsipController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        if (!$request->hasFile('file')){
+
+            back()-> with('error', 'file wajib diisi');
+        }
+
+        $validatedData = $request->validate([
+            'category_id' => 'required',
+            'name'=> 'required|max:255',
+            'deskripsi'=>'required',
+            'sifat'=> 'required',
+            'file'=> 'required',
+        ]);
+
+        $update = Arsip::where('id', $id)->update($validatedData);
+        $filetime = Carbon::now()->format('Y-m-d H:i:s');
+        $file_extension = $request->file('file')->getClientOriginalExtension();
+        $filename = md5($filetime) . '.' . $file_extension;
+        // $request ->file->move(public_path('arsips/'), $filename);
+        $request->file = 'arsips/' . $filename;
+
+        $validateData['user_id'] = auth()->user()->id;
+
+        // $file = $request->file('file')->store($request);
+        $file = $request->file('file')->store('arsips');
+
+
+
+        $update = Arsip::where('id', $id)->update($validatedData);
+
+
+        return ($update) ?
+        redirect() -> route('data.index')->with('success', 'Data Arsip berhasil disunting') :
+        back() -> with('error', 'Data Arsip gagal disunting');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -134,8 +177,23 @@ class DataArsipController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function destroy($id)
     {
-        //
+        try {
+            DB::beginTransaction();
+            $delete = Arsip::where('id', $id)->delete();
+            DB::commit();
+            return ($delete) ?
+            redirect()->route('data.index')->with('success', 'Data Arsip berhasil dihapus') :
+            back()->with('error', 'Data Arsip gagal dihapus');
+
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->with('error', 'terjadi kesalahan, Data Arsip gagal dihapus');
+
+        }
     }
 }
+
+

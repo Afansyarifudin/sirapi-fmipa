@@ -51,13 +51,16 @@
             processing : true,
             severSide : true,
             ajax : {
-                url: "{{ route('category.index')}}",
+                url: "{{ route('arsip.index')}}",
                 type : 'GET'
             },
             columns: [
                 { data: 'id', name:'id'},
                 { data: 'name', name:'name'},
-                { data: 'action', name:'action'},
+                { data: 'sifat', name:'sifat', width:'12%'},
+                { data: 'deskripsi', name:'deskripsi'},
+                { data: 'user_id', name:'user_id', width:'12%'},
+                { data: 'action', name:'action', width:'10%'},
             ],
             order: [[0,'asc']]
         });
