@@ -45,36 +45,45 @@ Route::middleware(['guest'])->group(function () {
 // Route for authenticat user need to login
 Route::middleware(['auth'])->group(function () {
 
-    // Route for dashboard/ home
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::group(['middleware' => ['role:admin|operator|dosen']], function () {
+        // Route for dashboard/ home
+        Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+        // Route for pengaturan
+        Route::get('/setting', [ProfileController::class, 'index'])->name('setting');
+
+        // route for data arsip
+        Route::resource('data', DataArsipController::class);
+
+    });
+
+    // middleware operator & admin
+    Route::group(['middleware' => ['role:operator|admin']], function () {
+
+         // Route for Manajemen Arsip
+        Route::resource('arsip', ManajemenArsipController::class);
+
+        // Route for Kategori
+        Route::resource('category', KategoriController::class);
 
 
-    // Route for pengaturan
-    Route::get('/setting', [ProfileController::class, 'index'])->name('setting');
 
+    });
 
-    // Route for user
-    Route::get('/user', [UserController::class, 'index'])->name('user');
-    Route::resource('user', UserController::class);
+    // middleware admin
+    Route::group(['middleware' => ['role:admin']], function () {
+        // Route for permission
+        Route::resource('permission', PermissionController::class);
 
-    Route::resource('data', DataArsipController::class);
+        // Route for role
+        Route::resource('role', RoleController::class);
 
+        // Route for user
+        Route::get('/user', [UserController::class, 'index'])->name('user');
+        Route::resource('user', UserController::class);
 
-    // Route for role
-    Route::resource('role', RoleController::class);
+    });
 
-
-
-    // Route for permission
-    Route::resource('permission', PermissionController::class);
-
-
-    // Route for Manajemen Arsip
-    Route::resource('arsip', ManajemenArsipController::class);
-
-
-    // Route for Kategori
-    Route::resource('category', KategoriController::class);
 
 
 });

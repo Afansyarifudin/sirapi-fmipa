@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Arsip;
 use App\Models\Category;
 use Carbon\Carbon;
+use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Contracts\Role;
 
 class DataArsipController extends Controller
 {
@@ -17,7 +20,9 @@ class DataArsipController extends Controller
      */
     public function index(Request $request)
     {
-        $list_arsips = Arsip::all();
+
+        $list_arsips = Arsip::all()->where('user_id', auth()->user()->id)->all();
+
 
 
         if ($request->ajax()){
