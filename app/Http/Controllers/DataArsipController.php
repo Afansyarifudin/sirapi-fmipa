@@ -22,6 +22,7 @@ class DataArsipController extends Controller
     {
 
         $list_arsips = Arsip::all()->where('user_id', auth()->user()->id)->all();
+        
 
 
 
