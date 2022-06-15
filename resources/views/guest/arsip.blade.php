@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Sirapi-fmipa</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <link rel="shortcut icon" href="{{ url('assets/images/logo_unnes.png') }}">
     <link href="{{ url('assets/css/app.min.css') }}" rel="stylesheet">
     <link href="{{ url('assets/vendors/datatables/dataTables.bootstrap.min.css') }}" rel="stylesheet">
@@ -14,7 +14,7 @@
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top scrolling-navbar">
         <div class="container">
             <!-- Navbar brand -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 <img alt="logoarsip" src="{{ url('assets/images/logo2.png') }}" height="50"/>
             </a>
             <!-- Collapse button -->
