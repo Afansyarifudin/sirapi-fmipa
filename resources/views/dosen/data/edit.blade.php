@@ -16,7 +16,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <form method="POST" action="{{ route('data.update', $data->id) }}">
+                <form method="POST" action="{{ route('data.update', $data->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="form-row mb-3">
@@ -36,6 +36,16 @@
                                 <option value="1" {{ $data->sifat == 1 ? 'selected' : '' }}>Private</option>
                                 <option value="2" {{ $data->sifat == 2 ? 'selected' : '' }}>Publik</option>
 
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row mb-3">
+                        <div class="col">
+                            <label for="category">Kategori</label>
+                            <select class="custom-select" name="category_id">
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category->id }}" {{ $category->id == $category->id ? 'selected' : '' }} >{{ $category->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>

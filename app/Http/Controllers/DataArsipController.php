@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
+use App\Models\User;
 use App\Models\Arsip;
 use App\Models\Category;
-use Carbon\Carbon;
 use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
@@ -22,7 +23,11 @@ class DataArsipController extends Controller
     {
 
         $list_arsips = Arsip::all()->where('user_id', auth()->user()->id)->all();
-        
+        // if (!$this->middleware(['role:dosen'])) {
+        //     $list_arsips = Arsip::all()->where('user_id', auth()->user()->id)->all();
+        // } else {
+        //     $list_arsips = Arsip::all();
+        // }
 
 
 
@@ -127,8 +132,9 @@ class DataArsipController extends Controller
     public function edit($id)
     {
         $data = Arsip::where('id', $id)->first();
+        $categories = Category::all();
 
-        return view('dosen.data.edit', compact('data'));
+        return view('dosen.data.edit', compact('data', 'categories'));
     }
 
     /**
@@ -140,6 +146,8 @@ class DataArsipController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        // return $request;/
 
         if (!$request->hasFile('file')){
 
@@ -154,7 +162,7 @@ class DataArsipController extends Controller
             'file'=> 'required',
         ]);
 
-        $update = Arsip::where('id', $id)->update($validatedData);
+        // $update = Arsip::where('id', $id)->update($validatedData);
         $filetime = Carbon::now()->format('Y-m-d H:i:s');
         $file_extension = $request->file('file')->getClientOriginalExtension();
         $filename = md5($filetime) . '.' . $file_extension;
@@ -164,14 +172,13 @@ class DataArsipController extends Controller
         $validateData['user_id'] = auth()->user()->id;
 
         // $file = $request->file('file')->store($request);
-        $file = $request->file('file')->store('arsips');
-
+        $file = $request->file('file')->update('arsips');
 
 
         $update = Arsip::where('id', $id)->update($validatedData);
 
 
-        return ($update) ?
+        return ($file) ?
         redirect() -> route('data.index')->with('success', 'Data Arsip berhasil disunting') :
         back() -> with('error', 'Data Arsip gagal disunting');
     }

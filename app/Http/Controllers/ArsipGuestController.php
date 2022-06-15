@@ -19,7 +19,7 @@ class ArsipGuestController extends Controller
             return datatables()-> of ($arsip_guest)
             ->addColumn('action', function($data){
                 $button = '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="View" class="badge badge-success mx-1"><i class="anticon anticon-select"></i></a>';
-                $button .= '<a href="#" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Download" class="badge badge-primary mx-1"><i class= "anticon anticon-download"></i></a>';
+                $button .= '<a href="'. route('guest.guest_arsip', $data->file) .'" data-toggle="tooltip"  data-id="'.$data->id.'" data-original-title="Download" class="badge badge-primary mx-1"><i class= "anticon anticon-download"></i></a>';
                 return $button;
             })
             ->rawColumns(['action'])
