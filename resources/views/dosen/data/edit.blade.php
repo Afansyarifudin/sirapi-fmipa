@@ -66,7 +66,12 @@
                             <label for="Keterangan">Pilih File</label>
                             <div class="form-row">
                                 <div class="custom-file">
-                                    <input type="file" class="form-control" id="file" name="file" />
+                                    <input type="file" class="form-control @error('file') is-invalid @enderror" id="file" name="file" value="{{ $data->file }}" />
+                                    @error('file')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>

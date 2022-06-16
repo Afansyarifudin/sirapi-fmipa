@@ -88,26 +88,34 @@ class DataArsipController extends Controller
             'name'=> 'required|max:255',
             'deskripsi'=>'required',
             'sifat'=> 'required',
-            'file'=> 'required',
+            'file'=> 'required|file|max:2048',
         ]);
 
 
 
-        $filetime = Carbon::now()->format('Y-m-d H:i:s');
-        $file_extension = $request->file('file')->getClientOriginalExtension();
-        $filename = md5($filetime) . '.' . $file_extension;
-        // $request ->file->move(public_path('arsips/'), $filename);
-        $request->file = 'arsips/' . $filename;
+        // $filetime = Carbon::now()->format('Y-m-d H:i:s');
+        // $file_extension = $request->file('file')->getClientOriginalExtension();
+        // $filename = md5($filetime) . '.' . $file_extension;
+        // // $request ->file->move(public_path('arsips/'), $filename);
+        // $request->file = 'arsips/' . $filename;
+
+        if ($request->file('file')) {
+            $validateData['file'] = $request->file('file')->store('public');
+        }
+
+        // $name = $request->file('file')->getClientOriginalName();
+
+        // $file = $request->file('file')->store('public/arsips');
 
         $validateData['user_id'] = auth()->user()->id;
 
         // $file = $request->file('file')->store($request);
-        $file = $request->file('file')->store('arsips');
+        // $file = $request->file('file')->store('arsips');
 
         $store = Arsip::create($validateData);
 
 
-        return ($file) ?
+        return ($store) ?
         redirect()->route('data.index')->with('success', 'arsip berhasil ditambahkan') :
         back()->with('error', 'arsip gagal ditambahkan');
     }
@@ -159,15 +167,15 @@ class DataArsipController extends Controller
             'name'=> 'required|max:255',
             'deskripsi'=>'required',
             'sifat'=> 'required',
-            'file'=> 'required',
+            'file'=> 'file',
         ]);
 
         // $update = Arsip::where('id', $id)->update($validatedData);
-        $filetime = Carbon::now()->format('Y-m-d H:i:s');
-        $file_extension = $request->file('file')->getClientOriginalExtension();
-        $filename = md5($filetime) . '.' . $file_extension;
-        // $request ->file->move(public_path('arsips/'), $filename);
-        $request->file = 'arsips/' . $filename;
+        // $filetime = Carbon::now()->format('Y-m-d H:i:s');
+        // $file_extension = $request->file('file')->getClientOriginalExtension();
+        // $filename = md5($filetime) . '.' . $file_extension;
+        // // $request ->file->move(public_path('arsips/'), $filename);
+        // $request->file = 'arsips/' . $filename;
 
         $validateData['user_id'] = auth()->user()->id;
 
