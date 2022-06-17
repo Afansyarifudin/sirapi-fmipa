@@ -23,9 +23,8 @@ class UserController extends Controller
 
                 return "<div style='text-align: center'>
 
-                <a href='". route('user.edit', $data->id) ."' data-toggle='tooltip'  data-id='".$data->id."' data-original-title='Edit' class='badge badge-primary mx-1'><i class='fas fa-user-edit'></i></a>
+
                 <a href=' ' class='badge badge-danger mx-1 deleteButton' data-form='#userDeleteButton$data->id'> <i class='far fa-trash-alt'></i>  </a>
-                <a href='". route('category.edit', $data->id) ."' data-toggle='tooltip'  data-id='".$data->id."' data-original-title='Edit' class='badge badge-info mx-1'><i class='anticon anticon-usergroup-add'></i></a>
                 <form id='userDeleteButton$data->id' action='" . route('user.destroy', $data->id) . "' method='POST'>" . csrf_field() . " " . method_field('DELETE') . "
                 </form>
             </div>";
@@ -39,6 +38,10 @@ class UserController extends Controller
             ->addIndexColumn()
 
             -> make(true);
+            // <a href='". route('user.edit', $data->id) ."' data-toggle='tooltip'  data-id='".$data->id."' data-original-title='Edit' class='badge badge-primary mx-1'><i class='fas fa-user-edit'></i></a>
+            // <a href='". route('category.edit', $data->id) ."' data-toggle='tooltip'  data-id='".$data->id."' data-original-title='Edit' class='badge badge-info mx-1'><i class='anticon anticon-usergroup-add'></i></a>
+
+
         }
         return view('admin.user.index');
     }
