@@ -23,7 +23,7 @@
                         <th>No</th>
                         <th>Nama Arsip</th>
                         <th>Sifat Arsip</th>
-                        <th>Deskripsi</th>
+                        <th>Kategori</th>
                         <th>Created by</th>
                         <th style=" text-align: center"><i class='anticon anticon-setting'></i></th>
                     </thead>
@@ -58,7 +58,7 @@
                 { data: 'id', name:'id'},
                 { data: 'name', name:'name'},
                 { data: 'sifat', name:'sifat', width:'12%'},
-                { data: 'deskripsi', name:'deskripsi'},
+                { data: 'category_id', name:'kategori'},
                 { data: 'user_id', name:'user_id', width:'12%'},
                 { data: 'action', name:'action', width:'10%'},
             ],

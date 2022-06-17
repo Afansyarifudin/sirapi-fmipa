@@ -100,7 +100,7 @@ class DataArsipController extends Controller
         // $request->file = 'arsips/' . $filename;
 
         if ($request->file('file')) {
-            $validateData['file'] = $request->file('file')->store('public');
+            $validateData['file'] = $request->file('file')->store('arsips');
         }
 
         // $name = $request->file('file')->getClientOriginalName();
