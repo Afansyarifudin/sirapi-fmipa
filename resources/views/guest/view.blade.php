@@ -106,7 +106,7 @@
                         {{-- </div> --}}
 
                         <div class="col-lg-12">
-                            <div class="container-fluid">
+                            <div class="container">
                                 <div class="col-md-12">
                                     <div class="card">
                                         <div class="card-body">
@@ -122,19 +122,23 @@
                                 <div class="col-md-12">
                                     <div class="card">
                                         <div class="card-body mb-2">
-                                            <table class="table">
-                                                <thead>
-                                                    <th>Nama</th>
-                                                    <th>Deskripsi</th>
-                                                    <th>Kategori</th>
-                                                </thead>
+                                            <table class="table table-hover">
                                                 <tbody>
-                                                    <th>{{ $data->name }}</th>
-                                                    <th>{{ $data->deskripsi }}</th>
-                                                    <th>{{ $data->category_id }}</th>
+                                                    <tr>
+                                                        <th scope="row">Nama</th>
+                                                        <td>{{ $data->name }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Deskripsi</th>
+                                                        <td>{{ $data->deskripsi }}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">Kategori</th>
+                                                        <td>{{ $data->category_id }}</td>
+                                                    </tr>
                                                 </tbody>
                                             </table>
-                                            <embed src="/{{ $data->file }}" width="600" height="500" alt="pdf" />
+                                            <embed src="/{{ $data->file }}" width="1030"  height="600" alt="pdf" />
                                         </div>
                                     </div>
                                 </div>
