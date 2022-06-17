@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -62,7 +64,19 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->hasFile('avatar')){
+            $avatar = $request->file('avatar');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300,300)->save(public_path('assets/images/' . $filename ));
+
+            $user = Auth::user();
+            $user->avatar = $filename;
+            
+
+
+        }
+
+        return view('setting.index');
     }
 
     /**
