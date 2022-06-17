@@ -96,7 +96,7 @@
                                     <div id="collapseTwoDefault" class="collapse" data-parent="#accordion-default">
                                         <div class="card-body">
                                             @foreach ($list_category as $item)
-                                                <a class="dropdown-item" href="">{{ $item->name }}</a>
+                                                <a class="dropdown-item" href="{{ url('list', $item->id) }}">{{ $item->name }}</a>
                                             @endforeach
                                         </div>
                                     </div>
