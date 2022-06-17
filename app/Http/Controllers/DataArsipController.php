@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Contracts\Role;
+use Illuminate\Support\Facades\Storage;
 
 class DataArsipController extends Controller
 {
@@ -22,7 +23,10 @@ class DataArsipController extends Controller
     public function index(Request $request)
     {
 
-        $list_arsips = Arsip::all()->where('user_id', auth()->user()->id)->all();
+        $list_arsips = Arsip::all()
+                        ->where('user_id', auth()->user()->id)
+                        ->where('deleted_at', NULL)
+                        ->all();
         // if (!$this->middleware(['role:dosen'])) {
         //     $list_arsips = Arsip::all()->where('user_id', auth()->user()->id)->all();
         // } else {
@@ -39,7 +43,7 @@ class DataArsipController extends Controller
 
                 return "<div style='text-align: center'>
 
-                <a href='' data-toggle='tooltip'  data-id='".$data->id."' data-original-title='View' class='badge badge-success mx-1'><i class='anticon anticon-select'></i></a>
+                <a href='". route('data.show', $data->id) ."' data-toggle='tooltip'  data-id='".$data->id."' data-original-title='View' class='badge badge-success mx-1'><i class='anticon anticon-select'></i></a>
                 <a href='". route('data.edit', $data->id) ."' data-toggle='tooltip'  data-id='".$data->id."' data-original-title='Edit' class='badge badge-primary mx-1'><i class='fas fa-user-edit'></i></a>
                 <a href=' ' class='badge badge-danger mx-1 deleteButton' data-form='#dataDeleteButton$data->id'> <i class='far fa-trash-alt'></i> </a>
 
@@ -88,7 +92,7 @@ class DataArsipController extends Controller
             'name'=> 'required|max:255',
             'deskripsi'=>'required',
             'sifat'=> 'required',
-            'file'=> 'required|file|max:2048',
+            'file'=> 'file|max:2048',
         ]);
 
 
@@ -128,7 +132,9 @@ class DataArsipController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Arsip::find($id);
+
+        return view('dosen.data.view', compact('data'));
     }
 
     /**
@@ -157,18 +163,22 @@ class DataArsipController extends Controller
 
         // return $request;/
 
-        if (!$request->hasFile('file')){
+        // if (!$request->hasFile('file')){
 
-            back()-> with('error', 'file wajib diisi');
-        }
+        //     back()-> with('error', 'file wajib diisi');
+        // }
 
-        $validatedData = $request->validate([
+        // return "Success";
+
+        // return $request;
+
+        $rules = [
             'category_id' => 'required',
             'name'=> 'required|max:255',
             'deskripsi'=>'required',
             'sifat'=> 'required',
-            'file'=> 'file',
-        ]);
+            // 'file'=> 'file|max:2048',
+        ];
 
         // $update = Arsip::where('id', $id)->update($validatedData);
         // $filetime = Carbon::now()->format('Y-m-d H:i:s');
@@ -177,16 +187,26 @@ class DataArsipController extends Controller
         // // $request ->file->move(public_path('arsips/'), $filename);
         // $request->file = 'arsips/' . $filename;
 
+        // return "success";
+
+        $validateData = $request->validate($rules);
+
+
+        if ($request->file('file')) {
+            $request->file('file')->store('arsips');
+        }
+
         $validateData['user_id'] = auth()->user()->id;
 
+        $update = Arsip::where('id', $id)->update($validateData);
+
         // $file = $request->file('file')->store($request);
-        $file = $request->file('file')->update('arsips');
+        // $file = $request->file('file')->update('arsips');
 
 
-        $update = Arsip::where('id', $id)->update($validatedData);
 
 
-        return ($file) ?
+        return ($update) ?
         redirect() -> route('data.index')->with('success', 'Data Arsip berhasil disunting') :
         back() -> with('error', 'Data Arsip gagal disunting');
     }

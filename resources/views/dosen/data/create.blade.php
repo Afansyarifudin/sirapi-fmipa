@@ -63,7 +63,7 @@
                     </div>
                     <div class="form-row mb-3">
                         <div class="col">
-                            <label for="Keterangan">Pilih File</label>
+                            <label for="file">Pilih File</label>
                             <div class="form-row">
                                 <div class="custom-file">
                                     <input type="file" class="form-control @error('file') is-invalid @enderror" id="file" name="file" />
