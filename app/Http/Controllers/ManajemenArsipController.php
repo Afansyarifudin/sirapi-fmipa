@@ -23,8 +23,8 @@ class ManajemenArsipController extends Controller
 
 
                 return "<div style='text-align: center'>
-                    <a href='' data-toggle='tooltip'  data-id='".$data->id."' data-original-title='View' class='badge badge-success mx-1'><i class='anticon anticon-select'></i></a>
-                    <a href=' ' class='badge badge-danger mx-1 deleteButton' data-form='#dataDeleteButton$data->id'> <i class='far fa-trash-alt'></i> </a>
+                    <a href='". route('arsip.show', $data->id) ."' data-toggle='tooltip'  data-id='".$data->id."' data-original-title='View' class='badge badge-success mx-1'><i class='anticon anticon-select'></i></a>
+                    <a href='' class='badge badge-danger mx-1 deleteButton' data-form='#dataDeleteButton$data->id'> <i class='far fa-trash-alt'></i> </a>
 
                     <form id='dataDeleteButton$data->id' action='" . route('arsip.destroy', $data->id) . "' method='POST'>" . csrf_field() . " " . method_field('DELETE') . "
                     </form>
@@ -67,7 +67,9 @@ class ManajemenArsipController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Arsip::find($id);
+
+        return view('operator.arsip.show', compact('data'));
     }
 
     /**
