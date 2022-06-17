@@ -85,14 +85,14 @@
                                         </div>
                                     </div>
                                 </div> --}}
-                                <div class="card">
+                                {{-- <div class="card">
                                     <div class="card-header">
                                         <h5 class="card-title">
                                             <a class="collapsed" data-toggle="collapse" href="#collapseTwoDefault">
-                                                {{ $data->name }}
+                                                {{ $arsip_category->category_id }}
                                             </a>
                                         </h5>
-                                    </div>
+                                    </div> --}}
                                     {{--  <div id="collapseTwoDefault" class="collapse" data-parent="#accordion-default">
                                         <div class="card-body">
                                             @foreach ($list_category as $item)
@@ -100,7 +100,7 @@
                                             @endforeach
                                         </div>
                                     </div>  --}}
-                                </div>
+                                {{-- </div> --}}
                             </div>
                             <!-- End Accordion -->
                         </div>
@@ -128,6 +128,13 @@
                                                     <th>Nama</th>
                                                     <th><i class='anticon anticon-setting'></i></th>
                                                 </thead>
+                                                <tbody>
+                                                    @foreach ($arsip_category as $item)
+                                                    <td>{{ $item->id }}</td>
+                                                    <td>{{ $item->name }}</td>
+                                                    
+                                                    @endforeach
+                                                </tbody>
                                             </table>
                                         </div>
                                     </div>
@@ -149,13 +156,13 @@
     @stack('js')
     @push('js')
 
-    {{--  <script>
+    {{-- <script>
         $(document).ready( function () {
             $('#datatable').DataTable({
             processing : true,
             severSide : true,
             ajax : {
-                url: "{{ route('guest.guest_arsip') }}",
+                url: "{{ route('guest.category_arsip') }}",
                 type : 'GET'
             },
             columns: [
@@ -166,7 +173,7 @@
             order: [[0,'asc']]
             });
         });
-    </script>  --}}
+    </script> --}}
 
 </body>
 </html>

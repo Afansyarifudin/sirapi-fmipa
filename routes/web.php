@@ -42,7 +42,7 @@ Route::middleware(['guest'])->group(function () {
 
         // show data arsip
         Route::get('show/{data}', [ArsipGuestController::class, 'show']);
-        Route::get('list/{data}', [ArsipGuestController::class, 'list']);
+        Route::get('list/{data}', [ArsipGuestController::class, 'list'])->name('category_arsip');
     });
 
 });

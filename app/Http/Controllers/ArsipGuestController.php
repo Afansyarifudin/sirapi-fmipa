@@ -19,6 +19,11 @@ class ArsipGuestController extends Controller
             ->where('deleted_at', NULL)
             ->get();
 
+        // $arsip_category = DB::table('arsips')
+        //         ->where('category_id', $id)
+        //         ->where('sifat', 'public')
+        //         ->get();
+
         if ($request->ajax()){
             return datatables()-> of ($arsip_guest)
             ->addColumn('action', function($data){
@@ -63,7 +68,7 @@ class ArsipGuestController extends Controller
                 ->where('sifat', 'public')
                 ->get();
 
-        $data = Arsip::all();
+        $data = Category::all();
 
         if ($request->ajax()){
             return datatables()-> of ($arsip_category)
