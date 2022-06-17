@@ -10,10 +10,10 @@
                     <h4 class="card-title">Pengaturan Pengguna</h4>
                 </div>
                     <div class="card-body">
-                        <form action="">
+                        <form action="{{ route('user.store')}}" method="POST" enctype="multipart/form-data">
                             <div class="media align-items-center">
                                 <div class="avatar avatar-image  m-h-10 m-r-15" st  yle="height: 80px; width: 80px">
-                                    <img src="{{ Auth::user()->avatar }}" alt="">
+                                    <img src="assets/images/{{ Auth::user()->avatar }}" alt="">
                                 </div>
                                 <div class="m-l-20 m-r-20">
                                     <h5 class="m-b-5 font-size-18">Update profile</h5>
@@ -23,7 +23,9 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <button class="btn btn-tone btn-primary">Upload</button>
+                                    <input type="file" name="avatar">
+                                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                    <button type="submit" class="btn btn-primary float-right">Simpan foto</button>
                                 </div>
                             </div>
                         </form>
