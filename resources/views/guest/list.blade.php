@@ -128,13 +128,17 @@
                                                     <th>Nama</th>
                                                     <th><i class='anticon anticon-setting'></i></th>
                                                 </thead>
+                                                @foreach ($arsip_category as $item)
                                                 <tbody>
-                                                    @foreach ($arsip_category as $item)
                                                     <td>{{ $item->id }}</td>
                                                     <td>{{ $item->name }}</td>
-                                                    
-                                                    @endforeach
+                                                    <td class="text-center d-inline-flex">
+                                                        <a href="{{url('show', $item->id)}}" class="badge badge-success mx-1"data-toggle="tooltip" title= "View"><i class='anticon anticon-select'></i></a>
+                                                        <a href="{{url('/{$data->file}')}}" class="badge badge-primary mx-1"data-toggle="tooltip" title= "Download"><i class='anticon anticon-download'></i></a>
+                                                    </td>
+
                                                 </tbody>
+                                                @endforeach
                                             </table>
                                         </div>
                                     </div>
