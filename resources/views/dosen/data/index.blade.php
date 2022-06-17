@@ -26,7 +26,7 @@
                         <th>No</th>
                         <th>Nama Arsip</th>
                         <th>Sifat Arsip</th>
-                        <th>Ketegori</th>
+                        <th>Kategori</th>
                         <th style="text-align: center"><i class='anticon anticon-setting'></i></th>
                     </thead>
 
