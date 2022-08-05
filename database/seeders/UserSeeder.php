@@ -16,8 +16,8 @@ class UserSeeder extends Seeder
     {
         // create admin seeder
         $admin = User::create([
-            'name' => 'afan admin',
-            'email' => 'afan@admin.test',
+            'name' => 'admin admin',
+            'email' => 'admin@admin.test',
             'password' => bcrypt('12345678')
         ]);
 
@@ -25,8 +25,8 @@ class UserSeeder extends Seeder
 
         // create operator seeder
         $operator = User::create([
-            'name' => 'afan operator',
-            'email' => 'afan@operator.test',
+            'name' => 'operator operator',
+            'email' => 'operator@operator.test',
             'password' => bcrypt('12345678')
         ]);
 
@@ -34,8 +34,8 @@ class UserSeeder extends Seeder
 
         // create dosen seeder
         $dosen = User::create([
-            'name' => 'afan dosen',
-            'email' => 'afan@dosen.test',
+            'name' => 'dosen dosen',
+            'email' => 'dosen@dosen.test',
             'password' => bcrypt('12345678')
         ]);
 

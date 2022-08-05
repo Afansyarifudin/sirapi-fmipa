@@ -31,7 +31,7 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="javascript:void(0);">
-                    <span class="icon-holder">
+                    <span class="icon-holder">x
                         <i class="anticon anticon-mail"></i>
                     </span>
                     <span class="title">Surat</span>
@@ -72,9 +72,17 @@
             <li class="nav-item dropdown">
                 <a href="{{ route('category.index')}}">
                     <span class="icon-holder">
-                        <i class="anticon anticon-tags"></i>
+                        <i class="anticon anticon-tag"></i>
                     </span>
                     <span class="title" >Kategori</span>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a href="{{ route('subcategory.index')}}">
+                    <span class="icon-holder">
+                        <i class="anticon anticon-tags"></i>
+                    </span>
+                    <span class="title" >Sub Kategori</span>
                 </a>
             </li>
             @endhasanyrole

@@ -15,7 +15,7 @@ class KategoriController extends Controller
      */
     public function index(Request $request)
     {
-        $category_list = Category::all();
+        $category_list = Category::all(); 
 
         if($request->ajax()){
             return datatables() -> of($category_list)

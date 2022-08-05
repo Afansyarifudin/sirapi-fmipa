@@ -9,6 +9,7 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\ManajemenArsipController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\DataArsipController;
+use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -70,6 +71,9 @@ Route::middleware(['auth'])->group(function () {
 
         // Route for Kategori
         Route::resource('category', KategoriController::class);
+
+        // Route for Kategori
+        Route::resource('subcategory', SubCategoryController::class);
 
 
 

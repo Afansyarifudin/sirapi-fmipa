@@ -16,7 +16,6 @@ class ArsipGuestController extends Controller
 
         $arsip_guest = DB::table('arsips')
             ->where('sifat', 'public')
-            ->where('deleted_at', NULL)
             ->get();
 
         // $arsip_category = DB::table('arsips')

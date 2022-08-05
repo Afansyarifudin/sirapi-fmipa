@@ -21,7 +21,7 @@ class CreateProfilesTable extends Migration
             $table->string('alamat');
             $table->string('prodi');
             $table->string('jurusan');
-            $table->softDeletes();
+            // $table->softDeletes();
             $table->timestamps();
         });
     }
